@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quanyi/ProductDetailScreen/product_detail.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 
@@ -65,7 +67,9 @@ class ProductList extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        Get.to(() => ProductDetailScreen());
+      },
     );
   }
 }

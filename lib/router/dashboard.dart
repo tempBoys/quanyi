@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:quanyi/ChattingScreen/chatting.dart';
 import 'package:quanyi/HomeScreen/home.dart';
 import 'package:quanyi/MyPageScreen/my_page.dart';
+import 'package:quanyi/ProductDetailScreen/product_detail.dart';
 
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/size_config.dart';

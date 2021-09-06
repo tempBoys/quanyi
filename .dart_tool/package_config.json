@@ -56,6 +56,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_swiper_null_safety",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_swiper_null_safety-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/ts/Developer/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -182,7 +188,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-06T13:07:23.487749Z",
+  "generated": "2021-09-06T15:55:01.424725Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

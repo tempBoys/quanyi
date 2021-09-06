@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/models/constants.dart';
-import 'package:quanyi/widgets/dividers.dart';
+import 'package:quanyi/widgets/kdivider.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'components/product_list.dart';
 

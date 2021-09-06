@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:flutter/material.dart';
 
 class NormalAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  List<Widget>? actions;
+  final List<Widget>? actions;
   NormalAppbar({Key? key, this.title = '', this.actions}) : super(key: key);
 
   @override

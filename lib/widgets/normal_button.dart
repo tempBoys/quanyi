@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:flutter/material.dart';
 
 class BottomBarButton extends StatelessWidget {
   final double height;

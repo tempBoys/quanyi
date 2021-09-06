@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:quanyi/ChattingScreen/chatting.dart';
 import 'package:quanyi/HomeScreen/home.dart';
 import 'package:quanyi/MyPageScreen/my_page.dart';
-import 'package:quanyi/ProductDetailScreen/product_detail.dart';
-
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/size_config.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashboardController extends GetxController {
   RxInt tabIndex = 0.obs;

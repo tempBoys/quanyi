@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_controller.dart';
 import 'package:quanyi/models/constants.dart';
-import 'package:quanyi/models/utils/number_formatter.dart';
 
 class ProductBasicInfo extends StatelessWidget {
   ProductBasicInfo({Key? key}) : super(key: key);

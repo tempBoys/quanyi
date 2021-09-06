@@ -1,12 +1,13 @@
+import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/router/app_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/router/app_page.dart';
 
 void main() {
-  runApp(QuanYi());
+  runApp(quanyi());
 }
 
-class QuanYi extends StatelessWidget {
+class quanyi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -16,7 +17,8 @@ class QuanYi extends StatelessWidget {
           child: child!,
         );
       },
-      theme: ThemeData(fontFamily: "NotoSansSC"),
+      theme: ThemeData(
+          fontFamily: "NotoSansSC", backgroundColor: kBackGroundColor),
       initialRoute: AppRoutes.DASHBOARD,
       getPages: AppScreens.list,
       debugShowCheckedModeBanner: false,

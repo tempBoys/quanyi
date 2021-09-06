@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/UploadScreen/upload.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/kdivider.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
@@ -41,11 +42,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 1,
         child: Icon(Icons.add_outlined, size: 30),
         onPressed: () {
-          Get.to(() => Scaffold(
-                appBar: NormalAppbar(
-                  title: "上传我的货",
-                ),
-              ));
+          Get.to(() => UploadScreen());
         },
       ),
     );

@@ -13,6 +13,7 @@ class ProductList extends StatelessWidget {
     return GestureDetector(
       child: Container(
         height: 100,
+        color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,

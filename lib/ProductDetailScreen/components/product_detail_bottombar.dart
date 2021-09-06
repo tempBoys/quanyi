@@ -5,6 +5,7 @@ import 'package:quanyi/ProductDetailScreen/getxControllers/product_detail_scroll
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 import 'package:quanyi/widgets/lined_box.dart';
+import 'package:quanyi/widgets/normal_button.dart';
 
 class ProductDetailScreenBottomBar extends StatelessWidget {
   ProductDetailScreenBottomBar({
@@ -87,23 +88,11 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
                       )),
                   Flexible(
                     flex: 3,
-                    child: GestureDetector(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: kAccentColor,
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        height: 60,
-                        child: Center(
-                          child: Text(
-                            "开始聊天",
-                            textScaleFactor: 1.5,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
+                    child: BottomBarButton(
+                      backgroundColor: kAccentColor,
+                      text: "开始聊天",
+                      textScaleFactor: 1.5,
+                      textColor: Colors.white,
                       onTap: () {
                         // 채팅화면으로 전환
                       },

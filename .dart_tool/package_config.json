@@ -104,6 +104,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "multi_image_picker",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/multi_image_picker-4.8.01",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
       "packageUri": "lib/",
@@ -188,7 +194,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-06T15:55:01.424725Z",
+  "generated": "2021-09-06T17:05:01.640713Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/widgets/dividers.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
-
 import 'components/product_list.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,11 +24,17 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: ListView.builder(itemBuilder: (BuildContext ctx, int index) {
-        return Padding(
-            padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
-            child: ProductList(id: index));
-      }),
+      // 상품 리스트 목록
+      body: ListView.separated(
+          itemBuilder: (BuildContext ctx, int index) {
+            return Padding(
+                padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+                child: ProductList(id: index));
+          },
+          separatorBuilder: (BuildContext ctx, int index) {
+            return KDivider(height: 10);
+          },
+          itemCount: 10),
       floatingActionButton: FloatingActionButton(
         tooltip: "上传我的货",
         backgroundColor: kAccentColor,

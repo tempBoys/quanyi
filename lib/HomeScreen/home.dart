@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.builder(itemBuilder: (BuildContext ctx, int index) {
         return Padding(
-            padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
+            padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
             child: ProductList(id: index));
       }),
       floatingActionButton: FloatingActionButton(

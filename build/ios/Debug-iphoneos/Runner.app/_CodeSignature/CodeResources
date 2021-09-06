@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		o9/yJ1VCm3Pu0nWMU65TZymABQI=
+		fj48sbc8jTSQatUGKlU3mXbsIdY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,15 +118,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		cKAw6uH92Tv4VSF4oYTbG/c6190=
+		Ake9Uh2guu8o7mJfq03Akv3Srm0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		HNzammVVhv/1VMcgJJ7/ti0DJ+I=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
-		vKJkVIcw+LGHFnKJGwrQwCREv68=
+		AoCVFtT/bOy/RP28uaMM+YsgDcs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES</key>
 		<data>
@@ -136,13 +136,37 @@
 		<data>
 		33xe6rFwPlxRnZOgZWsODADpUI4=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Black.otf</key>
+		<data>
+		afYHeIEBbpp8W57HU1HrnyoKguw=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Bold.otf</key>
+		<data>
+		PgFlxGDiJU2B9AgV7byuoZoXit8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Light.otf</key>
+		<data>
+		nQzxSBrAQcALvtSCxo0G3VpkjgA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Medium.otf</key>
+		<data>
+		6cam3TuuMs54dPm2U2fJolm/UsA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Regular.otf</key>
+		<data>
+		0Wz//9cqvjgGpUI2xE1n1akVQPM=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Thin.otf</key>
+		<data>
+		V6n7W4tx9KJ8wFGBCeA5xg1R93E=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/isolate_snapshot_data</key>
 		<data>
 		ELluN2aQ5lXx4NZnJlBUXyZEfGo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		G4kQtH4rMxleZSsQrpn2aP1YmgM=
+		17PrNtW43P+YijD3DvmhXCYrJeo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -294,7 +318,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4nWaxxzDREoO3g/Az4g9+FFwDp0=
+		wHBGuoETjDNjEoOtmB122bgmsPk=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -302,7 +326,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		zTRPFhBykSosLgnz7sg3+5KFLHs=
+		r+gwEAJ/m3IpwxH4LeRPq6+Vpnw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -597,11 +621,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o9/yJ1VCm3Pu0nWMU65TZymABQI=
+			fj48sbc8jTSQatUGKlU3mXbsIdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			HZmuLJTBcLj6soGXobh5tU22CPW382e7YSD1kVYSMBk=
+			SVeGnZrybqt3ZfmwYYV6UO6xCUcxB/oR/jRI3s4GUkI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -619,33 +643,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cKAw6uH92Tv4VSF4oYTbG/c6190=
+			Ake9Uh2guu8o7mJfq03Akv3Srm0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Xty6GZpStRezRVyKTMy2FkkQDWI24/e9uEr4HIRXxiM=
+			yuXWTy6lYnYZorcBVRdQgS7NhGs0OGbJr0kxbC8Inik=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+			HNzammVVhv/1VMcgJJ7/ti0DJ+I=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			znpWRHOB2491XqoaTgbc6qca4JoDUdIbamIvEO4t+Rs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vKJkVIcw+LGHFnKJGwrQwCREv68=
+			AoCVFtT/bOy/RP28uaMM+YsgDcs=
 			</data>
 			<key>hash2</key>
 			<data>
-			zX4DZFvESy3Ue3y2JvUcTsv1Whl6t3JBYotHrBZfviE=
+			SEOukk40OTIPlE0OY8fmrHH0pUY9FfGtv7/W5dcsJTI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES</key>
@@ -670,6 +694,72 @@
 			0E0I/gLatnGI9y4elyWPSg2LWYJSPgLt6hMvgJD5+rQ=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Black.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			afYHeIEBbpp8W57HU1HrnyoKguw=
+			</data>
+			<key>hash2</key>
+			<data>
+			YvLpin3anb0RwJndujJEzF05eZCuT+PaPKHHdoXSmcs=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Bold.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PgFlxGDiJU2B9AgV7byuoZoXit8=
+			</data>
+			<key>hash2</key>
+			<data>
+			duxphJIslPM/++pp31nO61GWJM4R85r1AmKSPJyUvS8=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Light.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nQzxSBrAQcALvtSCxo0G3VpkjgA=
+			</data>
+			<key>hash2</key>
+			<data>
+			i69npW3KlIlAqHnkopDQqmoI6lVA2oNPdI6Xqe0+oYE=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Medium.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6cam3TuuMs54dPm2U2fJolm/UsA=
+			</data>
+			<key>hash2</key>
+			<data>
+			WLhi+dbQiAAhEuytj4tmhZ+pJHQMBchnYSNfyCvBu1E=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Regular.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0Wz//9cqvjgGpUI2xE1n1akVQPM=
+			</data>
+			<key>hash2</key>
+			<data>
+			Y/2ttHwhGXFw882mxg6Y5IG4oeso5fRBAtpRvsF9Ejs=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/fonts/NotoSansSC-Thin.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			V6n7W4tx9KJ8wFGBCeA5xg1R93E=
+			</data>
+			<key>hash2</key>
+			<data>
+			MM/v7btZaDV5iRoNffebqK7MdbBM611rloD5DejtLe8=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/isolate_snapshot_data</key>
 		<dict>
 			<key>hash</key>
@@ -685,11 +775,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G4kQtH4rMxleZSsQrpn2aP1YmgM=
+			17PrNtW43P+YijD3DvmhXCYrJeo=
 			</data>
 			<key>hash2</key>
 			<data>
-			/vPV4r2rcay5ShFnZvcUzl+jOjSpWfd9nmOrNetvmW4=
+			/fZmCz8odunJ/73Zc+DjOle2NsIhCaAz4lSLq//vUcw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1103,11 +1193,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zTRPFhBykSosLgnz7sg3+5KFLHs=
+			r+gwEAJ/m3IpwxH4LeRPq6+Vpnw=
 			</data>
 			<key>hash2</key>
 			<data>
-			oeFs3WnTR1Q0jbty8TG8aHAGWRmg6VdF17mSrklZnKU=
+			/iA9QkgIKYuB3kTx9NiJ3LNDGIBzS45IyiFpY6rUG7k=
 			</data>
 		</dict>
 	</dict>

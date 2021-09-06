@@ -16,6 +16,7 @@ class QuanYi extends StatelessWidget {
           child: child!,
         );
       },
+      theme: ThemeData(fontFamily: "NotoSansSC"),
       initialRoute: AppRoutes.DASHBOARD,
       getPages: AppScreens.list,
       debugShowCheckedModeBanner: false,

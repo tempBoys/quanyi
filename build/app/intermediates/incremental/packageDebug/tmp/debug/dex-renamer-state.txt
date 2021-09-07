@@ -1,4 +1,4 @@
-#Tue Sep 07 03:33:29 CST 2021
-base.0=/Users/ts/Desktop/quanyi/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
+#Tue Sep 07 12:21:48 GMT+08:00 2021
+base.0=C\:\\Users\\leojj\\Documents\\GitHub\\quanyi\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
+renamed.0=classes.dex

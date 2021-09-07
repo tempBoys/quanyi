@@ -29,7 +29,7 @@ const kTextColor = Color(0xFF333333);
 const kTextLightColor = Color(0xFF999999);
 
 // Padding
-const double kDefaultPadding = 10.0;
+const double kDefaultPadding = 15.0;
 
 // Size
 const kMarketProfileImageSize = 25.0;

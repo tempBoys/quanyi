@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: kAccentColor,
         elevation: 1,
         child: Icon(Icons.add_outlined, size: 30),
-        onPressed: () {
+        onPressed: () async {
           Get.to(() => UploadScreen());
         },
       ),

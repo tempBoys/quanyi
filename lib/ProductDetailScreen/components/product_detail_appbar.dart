@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/components/widget_with_animation.dart';
-import 'package:quanyi/ProductDetailScreen/getxControllers/product_controller.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_detail_scroll_controller.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/size_config.dart';
 
 class ProductDetailScreenAppBar extends StatelessWidget {
-  ProductDetailScreenAppBar({Key? key}) : super(key: key);
+  ProductDetailScreenAppBar({Key? key,required this.images}) : super(key: key);
   final appbarController = Get.put(ProductDetailScreenScrollController());
-  // final productController = Get.put(ProductController());
+  final List<Map<String,dynamic>> images;
 
   @override
   Widget build(BuildContext context) {
-    // final productImagesData = productController.product.images;
     return Obx(() => SliverAppBar(
           iconTheme:
               IconThemeData(color: appbarController.iconColorTween.value.value),
@@ -41,7 +39,7 @@ class ProductDetailScreenAppBar extends StatelessWidget {
               loop: false,
               itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
-                if (false) {
+                if (images.length!=0) {
                   return GestureDetector(
                       child: Image.network(
                         // productImagesData[index]["image"],

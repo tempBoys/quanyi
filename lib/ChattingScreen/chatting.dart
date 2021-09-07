@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/ChattingScreen/components/chatsscreen_body.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 
-class ChattingScreen extends StatelessWidget {
+class ChatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: NormalAppbar(title: "聊天"),
+      body: ChatsScreenBody(),
+    );
   }
 }
 

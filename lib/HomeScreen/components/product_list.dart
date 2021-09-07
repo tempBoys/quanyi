@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/product_detail.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 
 class ProductList extends StatelessWidget {
@@ -68,8 +69,10 @@ class ProductList extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () {
-        Get.to(() => ProductDetailScreen());
+      onTap: () async {
+        final tempData = await apiHelper.getProduct(id: 12);
+        print(tempData);
+        Get.to(() => ProductDetailScreen(), arguments: tempData);
       },
     );
   }

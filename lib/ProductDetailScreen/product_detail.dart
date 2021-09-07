@@ -17,6 +17,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final productData = Get.arguments;
     // 인자로 받아 온 상품 관련 정보를 컨트롤러에다가 저장한다
     // productController.product = Get.arguments;
     return Scaffold(

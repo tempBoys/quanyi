@@ -34,7 +34,7 @@ class DashboardScreen extends StatelessWidget {
               index: dashboardController.tabIndex.value,
               children: [
                 HomeScreen(),
-                ChattingScreen(),
+                ChatsScreen(),
                 MyPageScreen(),
               ],
             ),

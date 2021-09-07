@@ -4,22 +4,18 @@ import 'package:quanyi/ProductDetailScreen/components/product_detail_appbar.dart
 import 'package:quanyi/ProductDetailScreen/components/product_detail_bottombar.dart';
 import 'package:quanyi/ProductDetailScreen/components/shopper_info.dart';
 import 'package:quanyi/ProductDetailScreen/components/product_detail_product_basic_info.dart';
-import 'package:quanyi/ProductDetailScreen/getxControllers/product_controller.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_detail_scroll_controller.dart';
 import 'package:quanyi/widgets/kdivider.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   ProductDetailScreen({Key? key}) : super(key: key);
 
-  // final productController = Get.put(ProductController()); // 상품 컨트롤러 (상품의 정보들)
   final scrollController = Get.put(
       ProductDetailScreenScrollController()); // 상품 상세 스크린의 스크롤 컨트롤러 (앱바나 바텀바에서의 에니메이션 처리를 위한 것)
 
   @override
   Widget build(BuildContext context) {
     final productData = Get.arguments;
-    // 인자로 받아 온 상품 관련 정보를 컨트롤러에다가 저장한다
-    // productController.product = Get.arguments;
     return Scaffold(
         backgroundColor: Colors.white,
         body: NestedScrollView(
@@ -27,7 +23,9 @@ class ProductDetailScreen extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return [
               // 상품 이미지와 애니메이션 효과가 있는 앱바 (스크롤하면서 서서히 생긴다)
-              ProductDetailScreenAppBar(),
+              ProductDetailScreenAppBar(
+                images: productData["images"],
+              ),
             ];
           },
           body: SingleChildScrollView(

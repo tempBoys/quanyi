@@ -1,73 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:quanyi/ProductDetailScreen/components/shopper_info/gpa_graph.dart';
 import 'package:quanyi/ProductDetailScreen/components/shopper_info/info_card.dart';
 import 'package:quanyi/ProductDetailScreen/components/shopper_info/shopper_review_list.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ShopperInfo extends StatelessWidget {
-  const ShopperInfo({Key? key}) : super(key: key);
+  final userName;
+  final location;
+  ShopperInfo({
+    Key? key,
+    required this.userName,
+    this.location: "北京大学中关新园3号楼",
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          height: kInfoCardHeight,
+          height: 100,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              InfoCard(),
+              InfoCard(
+                userName: userName,
+                location: location,
+              ),
               // 판매자 평가를 보여준다
-              ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 3,
-                  itemBuilder: (BuildContext ctx, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 55,
-                            child: SfLinearGauge(
-                                orientation: LinearGaugeOrientation.vertical,
-                                showTicks: false,
-                                showLabels: false,
-                                axisTrackStyle: LinearAxisTrackStyle(
-                                    thickness: 5,
-                                    edgeStyle: LinearEdgeStyle.bothCurve),
-                                minimum: 0,
-                                maximum: 10,
-                                barPointers: index == 2
-                                    ? [
-                                        LinearBarPointer(
-                                          value: 7,
-                                          thickness: 5,
-                                          edgeStyle: LinearEdgeStyle.bothCurve,
-                                          color: Colors.redAccent[400],
-                                        )
-                                      ]
-                                    : [
-                                        LinearBarPointer(
-                                          value: 2.4,
-                                          thickness: 5,
-                                          edgeStyle: LinearEdgeStyle.bothCurve,
-                                          color: Colors.grey[400],
-                                        )
-                                      ]),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            "${index + 1}",
-                            textScaleFactor: 0.9,
-                            style: TextStyle(color: kTextColor),
-                          )
-                        ],
+              Container(
+                height: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 20,
+                      child: Text(
+                        "交易GPA",
+                        textScaleFactor: 0.8,
                       ),
-                    );
-                  })
+                    ),
+                    GpaGraph(
+                      satisfication: "满意",
+                      percentage: 8,
+                    ),
+                    GpaGraph(
+                      satisfication: "一般",
+                      percentage: 3,
+                    ),
+                    GpaGraph(
+                      satisfication: "不好",
+                      percentage: 2,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),

@@ -8,14 +8,21 @@ import 'package:quanyi/widgets/lined_box.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
 class ProductDetailScreenBottomBar extends StatelessWidget {
-  ProductDetailScreenBottomBar({
-    Key? key,
-  }) : super(key: key);
+  final price;
+  final negotiable;
+  final view;
+  ProductDetailScreenBottomBar(
+      {Key? key,
+      required this.price,
+      required this.negotiable,
+      required this.view})
+      : super(key: key);
   final productController = Get.put(ProductController());
   final bottombarController = Get.put(ProductDetailScreenScrollController());
 
   @override
   Widget build(BuildContext context) {
+    final nego = negotiable == true ? "협상 가능" : "협상 불가";
     return Obx(
       () => Container(
         height: 100.0 + bottombarController.scrollPosition.value / 8,
@@ -29,7 +36,7 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
               width: double.infinity,
               child: Center(
                 child: Text(
-                  "다른 추가 정보를 표시할 수 있음",
+                  "已经有 $view 个人看过",
                   textScaleFactor: 1.1,
                   style: TextStyle(
                     color: kTextLightColor,
@@ -68,7 +75,7 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
                           Container(
                             width: double.infinity,
                             child: Text(
-                              "${numFormatter.format(45.4)} 元",
+                              "${numFormatter.format(price)} 元",
                               textScaleFactor: 1.5,
                               style: TextStyle(
                                   color: kTextColor,
@@ -78,7 +85,7 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
                           Container(
                             width: double.infinity,
                             child: Text(
-                              "협상 가능",
+                              nego,
                               style: TextStyle(
                                   color: kTextColor,
                                   fontWeight: FontWeight.bold),

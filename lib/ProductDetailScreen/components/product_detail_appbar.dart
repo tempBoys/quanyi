@@ -7,9 +7,9 @@ import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/size_config.dart';
 
 class ProductDetailScreenAppBar extends StatelessWidget {
-  ProductDetailScreenAppBar({Key? key,required this.images}) : super(key: key);
+  ProductDetailScreenAppBar({Key? key, required this.images}) : super(key: key);
   final appbarController = Get.put(ProductDetailScreenScrollController());
-  final List<Map<String,dynamic>> images;
+  final List<dynamic> images;
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +39,10 @@ class ProductDetailScreenAppBar extends StatelessWidget {
               loop: false,
               itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
-                if (images.length!=0) {
+                if (images.length != 0) {
                   return GestureDetector(
                       child: Image.network(
-                        // productImagesData[index]["image"],
-                        "",
+                        images[index]["image"],
                         fit: BoxFit.cover,
                       ),
                       onTap: () {});

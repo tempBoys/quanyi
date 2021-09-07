@@ -36,12 +36,19 @@ class ProductDetailScreen extends StatelessWidget {
                 // 상품의 이름, 게시 날짜, 게시 내용을 보여준다
                 Padding(
                     padding: const EdgeInsets.fromLTRB(15, 20, 15, 5),
-                    child: ProductBasicInfo()),
+                    child: ProductBasicInfo(
+                      name: productData["name"],
+                      content: productData["content"],
+                      createdAt: productData["created_at"],
+                      status: productData["status"],
+                    )),
                 KDivider(height: 20),
                 // 배송 정보를 보여준다
                 Padding(
                   padding: const EdgeInsets.fromLTRB(15, 15, 15, 21.5),
-                  child: ShopperInfo(),
+                  child: ShopperInfo(
+                    userName: productData["user"]["user_name"],
+                  ),
                 ),
 
                 KDivider(height: 10, thickness: 6.5),
@@ -51,6 +58,10 @@ class ProductDetailScreen extends StatelessWidget {
         ),
 
         // 찜 버튼과 구매하기 버튼이 있는 바텀바
-        bottomNavigationBar: ProductDetailScreenBottomBar());
+        bottomNavigationBar: ProductDetailScreenBottomBar(
+          price: productData["price"],
+          negotiable: productData["negotiable"],
+          view: productData["view"],
+        ));
   }
 }

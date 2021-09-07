@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:quanyi/models/constants.dart';
 
 class InfoCard extends StatelessWidget {
-  const InfoCard({Key? key}) : super(key: key);
+  final userName;
+  final location;
+  final profileImage;
+  InfoCard({
+    Key? key,
+    required this.userName,
+    required this.location,
+    this.profileImage = "",
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: kInfoCardHeight,
       width: 220,
       child: Stack(
         alignment: AlignmentDirectional.centerStart,
@@ -23,7 +32,7 @@ class InfoCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "판매자 이름",
+                      userName,
                       textScaleFactor: 1.1,
                       style: TextStyle(
                         color: kTextColor,
@@ -31,7 +40,7 @@ class InfoCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "현재 거주지",
+                      location,
                       textScaleFactor: 0.8,
                       style: TextStyle(color: kTextLightColor),
                     )
@@ -52,23 +61,13 @@ class InfoCard extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(2),
                   child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.grey[50],
-                    ),
-                    child: Center(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "交易GPA",
-                          textScaleFactor: 0.7,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text("3.4")
-                      ],
-                    )),
-                  ),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey[50],
+                      ),
+                      child: profileImage != ""
+                          ? Image.network(profileImage)
+                          : Container()),
                 ),
               ))
         ],

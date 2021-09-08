@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/UploadScreen/getxControllers/description_controller.dart';
+import 'package:quanyi/UploadScreen/getxControllers/post_controller.dart';
 import 'package:quanyi/models/constants.dart';
 
 class UploadTexts extends StatefulWidget {
@@ -41,6 +41,7 @@ class _UploadTextsState extends State<UploadTexts> {
       height: height,
       width: width,
       child: TextFormField(
+        cursorColor: kTextColor,
         keyboardType: widget.upload == Upload.price
             ? TextInputType.numberWithOptions(decimal: true)
             : TextInputType.text,

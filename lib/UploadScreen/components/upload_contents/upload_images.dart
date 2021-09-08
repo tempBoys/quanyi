@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/UploadScreen/getxControllers/description_controller.dart';
+import 'package:quanyi/UploadScreen/getxControllers/post_controller.dart';
 import 'package:quanyi/models/size_config.dart';
 
 class UploadImages extends StatelessWidget {

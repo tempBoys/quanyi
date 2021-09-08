@@ -3,22 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/UploadScreen/components/upload_contents/upload_images.dart';
 import 'package:quanyi/UploadScreen/components/upload_contents/upload_texts.dart';
-import 'package:quanyi/UploadScreen/getxControllers/description_controller.dart';
+import 'package:quanyi/UploadScreen/getxControllers/post_controller.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/widgets/kdivider.dart';
 
-class UploadContents extends StatefulWidget {
-  const UploadContents({Key? key}) : super(key: key);
+class UploadContents extends StatelessWidget {
+  UploadContents({Key? key}) : super(key: key);
 
-  @override
-  _UploadContentsState createState() => _UploadContentsState();
-}
-
-class _UploadContentsState extends State<UploadContents> {
   final double screenWidth = SizeConfig.screenWidth;
   final postController = Get.put(PostController());
-  bool _switchValue = false;
+
   Widget customHint({required String title}) {
     return Text(
       title,
@@ -52,21 +47,30 @@ class _UploadContentsState extends State<UploadContents> {
             height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 UploadTexts(upload: Upload.price),
-                Row(
-                  children: [
-                    CupertinoSwitch(
-                      value: _switchValue,
-                      onChanged: (value) {
-                        setState(() {
-                          _switchValue = value;
-                        });
-                      },
-                    ),
-                    Text("협상 가능")
-                  ],
-                ),
+                Obx(() => Row(
+                      children: [
+                        CupertinoSwitch(
+                          value: postController.negotiable.value,
+                          activeColor: kAccentColor,
+                          onChanged: (value) {
+                            postController.updateNego();
+                          },
+                        ),
+                        Container(
+                          width: 60,
+                          child: Text(
+                            postController.negotiable.value == true
+                                ? "可协商"
+                                : "不可协商",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: kTextColor),
+                          ),
+                        )
+                      ],
+                    )),
               ],
             ),
           ),

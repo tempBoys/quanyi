@@ -15,18 +15,13 @@ class HomeScreen extends StatelessWidget {
       appBar: NormalAppbar(
         title: "主页",
         actions: [
-          IconButton(
-            icon: Icon(CupertinoIcons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(CupertinoIcons.bell),
-            onPressed: () {},
-          )
+          IconButton(icon: Icon(CupertinoIcons.search), onPressed: () {}),
+          IconButton(icon: Icon(CupertinoIcons.bell), onPressed: () {})
         ],
       ),
       // 상품 리스트 목록
       body: ListView.separated(
+          itemCount: 10,
           itemBuilder: (BuildContext ctx, int index) {
             return Padding(
                 padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
@@ -34,8 +29,7 @@ class HomeScreen extends StatelessWidget {
           },
           separatorBuilder: (BuildContext ctx, int index) {
             return KDivider(height: 10);
-          },
-          itemCount: 10),
+          }),
       // 상품 올리기 버튼
       floatingActionButton: FloatingActionButton(
         tooltip: "上传我的货",

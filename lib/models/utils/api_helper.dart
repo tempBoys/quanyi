@@ -8,6 +8,7 @@ import 'package:dio/dio.dart' as dio;
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:http_parser/http_parser.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:uri_to_file/uri_to_file.dart';
 
 class ApiHelper {
@@ -50,6 +51,7 @@ class ApiHelper {
       request.fields["name"] = productData["name"];
       request.fields["price"] = productData["price"].toString();
       request.fields["content"] = productData["content"];
+      request.fields["negotiable"] = productData["negotiable"];
 
       // var request = http.MultipartRequest(
       //     'POST', Uri.parse(serverUrl + "product/image/test"));
@@ -65,10 +67,14 @@ class ApiHelper {
       http.StreamedResponse response = await request.send();
 
       if (response.statusCode == 200) {
-        print("object");
+        Get.off(() => Scaffold(
+              appBar: NormalAppbar(title: "上传成功"),
+              body: Center(
+                child: Text("感谢使用！"),
+              ),
+            ));
       } else {
-        print("111");
-        // print(response.reasonPhrase);
+        Get.snackbar("上传失败", "请检查一下网络状态");
       }
 
       // // create multipart request

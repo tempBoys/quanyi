@@ -70,9 +70,9 @@ class ProductList extends StatelessWidget {
         ),
       ),
       onTap: () async {
-        final tempData = await apiHelper.getProduct(id: 31);
-        print(tempData);
-        Get.to(() => ProductDetailScreen(), arguments: tempData);
+        // 상품을 불러와 상세 스크린으로 이동한다
+        final productData = await apiHelper.getProduct(id: 31);
+        Get.to(() => ProductDetailScreen(), arguments: productData);
       },
       onDoubleTap: () {},
     );

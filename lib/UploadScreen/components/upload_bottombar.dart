@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/UploadScreen/getxControllers/description_controller.dart';
+import 'package:quanyi/UploadScreen/getxControllers/post_controller.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/widgets/lined_box.dart';
-import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
 class UploadScreenBottomBar extends StatelessWidget {
@@ -18,9 +17,7 @@ class UploadScreenBottomBar extends StatelessWidget {
       decoration: linedBox(top: true),
       child: Column(
         children: [
-          SizedBox(
-            height: 8,
-          ),
+          SizedBox(height: 8),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: BottomBarButton(
@@ -33,16 +30,9 @@ class UploadScreenBottomBar extends StatelessWidget {
                   "name": postController.name,
                   "price": postController.price,
                   "content": postController.content,
+                  "negotiable": postController.negotiable.value,
                   "images": postController.images
                 });
-                Get.off(() => Scaffold(
-                      appBar: NormalAppbar(
-                        title: "上传成功",
-                      ),
-                      body: Center(
-                        child: Text("感谢使用！"),
-                      ),
-                    ));
               },
             ),
           )

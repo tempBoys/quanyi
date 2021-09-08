@@ -11,6 +11,8 @@ class PostController extends GetxController {
   String content = '';
   // 입력한 가격
   double price = 0.0;
+  // 협상 여부
+  RxBool negotiable = false.obs;
 
   // 제목 업데이트
   void updateName({required String text}) {
@@ -25,6 +27,11 @@ class PostController extends GetxController {
   // 가격 업데이트
   void updatePrice({required double text}) {
     price = text;
+  }
+
+  // 협상 여부 업데이트
+  void updateNego() {
+    negotiable.value = !negotiable.value;
   }
 
   // 사진 추가하기 아이콘
@@ -69,7 +76,6 @@ class PostController extends GetxController {
     } on Exception catch (e) {
       print(e);
     }
-
     images.value = resultList;
   }
 }

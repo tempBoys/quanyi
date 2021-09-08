@@ -22,7 +22,7 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final nego = negotiable == true ? "협상 가능" : "협상 불가";
+    final nego = negotiable == true ? "可协商" : "不可协商";
     return Obx(
       () => Container(
         height: 100.0 + bottombarController.scrollPosition.value / 8,

@@ -19,7 +19,7 @@ class quanyi extends StatelessWidget {
       },
       theme: ThemeData(
           fontFamily: "NotoSansSC", backgroundColor: kBackGroundColor),
-      initialRoute: AppRoutes.DASHBOARD,
+      initialRoute: "${AppRoutes.DASHBOARD}SignInLoading",
       getPages: AppScreens.list,
       debugShowCheckedModeBanner: false,
     );

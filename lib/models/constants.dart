@@ -41,3 +41,10 @@ BorderSide kBorderLine = BorderSide(color: Color(0xFFF2F2F2), width: 1);
 
 // 상품 업로드 관련
 enum Upload { title, description }
+
+enum Authentication { SignUp, ResetPassword }
+
+final RegExp onlyDigits = RegExp("[0-9]+");
+
+final RegExp legalChinesePhoneNum = RegExp(
+    '^((13[0-9])|(15[^4])|(166)|(17[0-8])|(18[0-9])|(19[8-9])|(147,145))\\d{8}\$');

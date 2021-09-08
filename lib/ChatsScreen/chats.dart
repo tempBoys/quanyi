@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/ChattingScreen/components/chatsscreen_body.dart';
+import 'package:quanyi/ChatsScreen/components/chatsscreen_body.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 
 class ChatsScreen extends StatelessWidget {

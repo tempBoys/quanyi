@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quanyi/ChattingScreen/components/chat_card.dart';
-import 'package:quanyi/ChattingScreen/models/Chat.dart';
+import 'package:quanyi/ChatsScreen/components/chat_card.dart';
+import 'package:quanyi/ChatsScreen/models/Chat.dart';
 
 class ChatsScreenBody extends StatelessWidget {
   const ChatsScreenBody({Key? key}) : super(key: key);

@@ -18,10 +18,7 @@ class UploadContents extends StatelessWidget {
     return Text(
       title,
       textScaleFactor: 1.5,
-      style: TextStyle(
-        color: kTextColor,
-        fontWeight: FontWeight.bold,
-      ),
+      style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
     );
   }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quanyi/ChattingScreen/components/messages/image_message.dart';
-import 'package:quanyi/ChattingScreen/components/messages/text_message.dart';
-import 'package:quanyi/ChattingScreen/models/ChatMessage.dart';
+import 'package:quanyi/ChatsScreen/components/messages/image_message.dart';
+import 'package:quanyi/ChatsScreen/components/messages/text_message.dart';
+import 'package:quanyi/ChatsScreen/models/ChatMessage.dart';
 import 'package:quanyi/models/constants.dart';
 
 class MessageBallon extends StatelessWidget {

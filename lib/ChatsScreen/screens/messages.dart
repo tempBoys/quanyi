@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quanyi/ChattingScreen/components/messages/body.dart';
+import 'package:quanyi/ChatsScreen/components/messages/body.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 

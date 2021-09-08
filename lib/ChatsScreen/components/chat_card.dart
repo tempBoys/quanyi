@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/ChattingScreen/models/Chat.dart';
-import 'package:quanyi/ChattingScreen/screens/messages.dart';
+import 'package:quanyi/ChatsScreen/models/Chat.dart';
+import 'package:quanyi/ChatsScreen/screens/messages.dart';
 import 'package:quanyi/models/constants.dart';
 
 class ChatCard extends StatelessWidget {

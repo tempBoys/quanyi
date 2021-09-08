@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quanyi/ChattingScreen/components/messages/bottom.dart';
-import 'package:quanyi/ChattingScreen/components/messages/chat_field.dart';
+import 'package:quanyi/ChatsScreen/components/messages/bottom.dart';
+import 'package:quanyi/ChatsScreen/components/messages/chat_field.dart';
 import 'package:quanyi/models/constants.dart';
 
 class MessagesScreenBody extends StatelessWidget {

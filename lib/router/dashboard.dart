@@ -1,4 +1,4 @@
-import 'package:quanyi/ChattingScreen/chatting.dart';
+import 'package:quanyi/ChatsScreen/chats.dart';
 import 'package:quanyi/HomeScreen/home.dart';
 import 'package:quanyi/MyPageScreen/my_page.dart';
 import 'package:quanyi/models/constants.dart';

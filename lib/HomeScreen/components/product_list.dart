@@ -70,10 +70,11 @@ class ProductList extends StatelessWidget {
         ),
       ),
       onTap: () async {
-        final tempData = await apiHelper.getProduct(id: 12);
+        final tempData = await apiHelper.getProduct(id: 24);
         print(tempData);
         Get.to(() => ProductDetailScreen(), arguments: tempData);
       },
+      onDoubleTap: () {},
     );
   }
 }

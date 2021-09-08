@@ -36,6 +36,7 @@ class HomeScreen extends StatelessWidget {
             return KDivider(height: 10);
           },
           itemCount: 10),
+      // 상품 올리기 버튼
       floatingActionButton: FloatingActionButton(
         tooltip: "上传我的货",
         backgroundColor: kAccentColor,

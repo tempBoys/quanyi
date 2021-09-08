@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/widgets/lined_box.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
@@ -23,8 +24,13 @@ class UploadScreenBottomBar extends StatelessWidget {
               text: "上传我的货",
               textScaleFactor: 1.5,
               textColor: Colors.white,
-              onTap: () {
-                // 채팅화면으로 전환
+              onTap: () async {
+                await apiHelper.postProduct(productData: {
+                  "name": "젤다 팝니다3",
+                  "price": 230,
+                  "content": "군대 간 아버지가 남겨놓은 마지막 물건입니다. 선착순 띱",
+                });
+                print("object");
               },
             ),
           )

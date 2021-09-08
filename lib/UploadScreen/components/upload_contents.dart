@@ -31,7 +31,7 @@ class _UploadContentsState extends State<UploadContents> {
           Padding(
             padding: const EdgeInsets.only(bottom: 15),
             child: Text(
-              '이미지',
+              '图像',
               textScaleFactor: 1.5,
               style: TextStyle(
                 color: kTextColor,
@@ -40,21 +40,18 @@ class _UploadContentsState extends State<UploadContents> {
             ),
           ),
           UploadImages(),
-          KDivider(height: 20),
+          KDivider(height: 40),
           // 제목을 업로드 한다
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Text(
-              '제목',
-              textScaleFactor: 1.5,
-              style: TextStyle(
-                color: kTextColor,
-                fontWeight: FontWeight.bold,
-              ),
+          Text(
+            '标题',
+            textScaleFactor: 1.5,
+            style: TextStyle(
+              color: kTextColor,
+              fontWeight: FontWeight.bold,
             ),
           ),
           UploadTexts(upload: Upload.title),
-          KDivider(height: 20),
+          KDivider(height: 40),
           // 금액을 입력한다 & 협상 가능 여부
           Container(
             height: 30,

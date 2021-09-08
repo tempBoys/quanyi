@@ -103,7 +103,7 @@ class _QuanYiState extends State<QuanYi> {
           fontFamily: "NotoSansSC", backgroundColor: kBackGroundColor),
       initialRoute: AppRoutes.DASHBOARD,
       getPages: AppScreens.list,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
     );
   }
 }

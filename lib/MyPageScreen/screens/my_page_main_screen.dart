@@ -22,12 +22,6 @@ class MyPageMainScreen extends StatelessWidget {
     return Scaffold(
       appBar: NormalAppbar(
         title: "我的信息",
-        actions: [
-          IconButton(
-            icon: Icon(Icons.location_searching),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(13.w),
@@ -65,7 +59,7 @@ class MyPageMainScreen extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 25.h,
+              height: 50.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,44 +86,6 @@ class MyPageMainScreen extends StatelessWidget {
                   text: "收藏",
                 ),
               ],
-            ),
-            KDivider(
-              height: 50.h,
-            ),
-            Flexible(
-              child: ListView(
-                children: [
-                  CustomListTile(
-                    iconData: Icons.location_on_outlined,
-                    text: "设置我的地区",
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  CustomListTile(
-                    iconData: Icons.location_searching_outlined,
-                    text: "验证我的地区",
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  CustomListTile(
-                    iconData: Icons.local_offer_outlined,
-                    text: "关键词通知",
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  CustomListTile(
-                    iconData: Icons.menu_outlined,
-                    text: "菜单",
-                    onTap: () {},
-                  ),
-                ],
-              ),
             ),
           ],
         ),

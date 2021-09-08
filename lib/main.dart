@@ -42,50 +42,34 @@ class _QuanYiState extends State<QuanYi> {
       print('Device token: $deviceToken');
 
       // Display an alert with the device token
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-                title: Text('Pushy'),
-                content: Text('Pushy device token: $deviceToken'),
-                actions: [
-                  FlatButton(
-                      child: Text('OK'),
-                      onPressed: () {
-                        Navigator.of(context, rootNavigator: true)
-                            .pop('dialog');
-                      })
-                ]);
-          });
+      Get.dialog(Column(
+        children: [
+          Text('Pushy'),
+          Text('Pushy device token: $deviceToken'),
+          TextButton(child: Text('OK'), onPressed: () {})
+        ],
+      ));
 
       // Optionally send the token to your backend server via an HTTP GET request
       // ...
     } on PlatformException catch (error) {
       // Display an alert with the error message
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-                title: Text('Error'),
-                content: Text(error.message!),
-                actions: [
-                  FlatButton(
-                      child: Text('OK'),
-                      onPressed: () {
-                        Navigator.of(context, rootNavigator: true)
-                            .pop('dialog');
-                      })
-                ]);
-          });
+      Get.dialog(Column(
+        children: [
+          Text('Error'),
+          // Text(error.message!),
+          TextButton(child: Text('OK'), onPressed: () {})
+        ],
+      ));
     }
   }
 
   @override
   void initState() {
     super.initState();
-    // // Start the Pushy service
+    // // // Start the Pushy service
     // Pushy.listen();
-    // // Listen for push notifications received
+    // // // Listen for push notifications received
     // Pushy.setNotificationListener(backgroundNotificationListener);
     // pushyRegister();
   }

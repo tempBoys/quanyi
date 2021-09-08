@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quanyi/UploadScreen/getxControllers/description_controller.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/widgets/lined_box.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
 class UploadScreenBottomBar extends StatelessWidget {
-  const UploadScreenBottomBar({Key? key}) : super(key: key);
+  UploadScreenBottomBar({Key? key}) : super(key: key);
+  final postController = Get.put(PostController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +30,19 @@ class UploadScreenBottomBar extends StatelessWidget {
               textColor: Colors.white,
               onTap: () async {
                 await apiHelper.postProduct(productData: {
-                  "name": "젤다 팝니다3",
-                  "price": 230,
-                  "content": "군대 간 아버지가 남겨놓은 마지막 물건입니다. 선착순 띱",
+                  "name": postController.name,
+                  "price": postController.price,
+                  "content": postController.content,
+                  "images": postController.images
                 });
-                print("object");
+                Get.off(() => Scaffold(
+                      appBar: NormalAppbar(
+                        title: "上传成功",
+                      ),
+                      body: Center(
+                        child: Text("感谢使用！"),
+                      ),
+                    ));
               },
             ),
           )

@@ -1,6 +1,14 @@
 import 'dart:convert';
-import 'package:get/get.dart';
+import 'dart:async';
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart' as dio;
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:http_parser/http_parser.dart';
+import 'package:uri_to_file/uri_to_file.dart';
 
 class ApiHelper {
   final serverUrl = "http://d9eb-124-14-224-4.ngrok.io/";
@@ -39,14 +47,48 @@ class ApiHelper {
         "Content-Type": "multipart/form-data",
         'Authorization': userToken
       };
-      request.headers.addAll(headers);
       request.fields["name"] = productData["name"];
       request.fields["price"] = productData["price"].toString();
       request.fields["content"] = productData["content"];
-      await request.send();
+
+      // var request = http.MultipartRequest(
+      //     'POST', Uri.parse(serverUrl + "product/image/test"));
+      for (var file in productData["images"]) {
+        Uri uri = Uri.parse(file.identifier);
+        File tempFile = await toFile(uri);
+        print(tempFile.path);
+        request.files
+            .add(await http.MultipartFile.fromPath('images', tempFile.path));
+      }
+
+      request.headers.addAll(headers);
+      http.StreamedResponse response = await request.send();
+
+      if (response.statusCode == 200) {
+        print("object");
+      } else {
+        print("111");
+        // print(response.reasonPhrase);
+      }
+
+      // // create multipart request
+      // for (Asset asset in productData["images"]) {
+      //   ByteData byteData = await asset.getByteData();
+      //   List<int> imageData = byteData.buffer.asUint8List();
+
+      //   http.MultipartFile multipartFile = http.MultipartFile.fromBytes(
+      //     'image',
+      //     imageData,
+      //     filename: 'some-file-name.jpg',
+      //   );
+      //   multipartFileList.add(multipartFile);
+      // }
+      // request.fields["images"] = multipartFileList.toString();
+      // // request.fields["images"] = productData["images"];
+
+      // await request.send();
     } catch (e) {
       print(e);
-      Get.snackbar("网络异常", "产品上传失败！");
     }
   }
 }

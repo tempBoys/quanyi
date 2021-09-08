@@ -70,7 +70,7 @@ class ProductList extends StatelessWidget {
         ),
       ),
       onTap: () async {
-        final tempData = await apiHelper.getProduct(id: 24);
+        final tempData = await apiHelper.getProduct(id: 31);
         print(tempData);
         Get.to(() => ProductDetailScreen(), arguments: tempData);
       },

@@ -7,7 +7,7 @@ import 'package:quanyi/widgets/normal_appbar.dart';
 
 class UploadScreen extends StatelessWidget {
   UploadScreen({Key? key}) : super(key: key);
-  final descriptionController = Get.put(DescriptionController());
+  final postController = Get.put(PostController());
 
   @override
   Widget build(BuildContext context) {

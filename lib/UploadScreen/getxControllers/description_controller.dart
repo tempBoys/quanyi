@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:multi_image_picker2/multi_image_picker2.dart';
 
-class DescriptionController extends GetxController {
+class PostController extends GetxController {
   // 삽입할 이미지 리스트
   RxList<Asset> images = <Asset>[].obs;
   // 입력한 제목
-  String title = '';
-  // 입력한 설명
-  String description = '';
+  String name = '';
+  // 입력한 내용
+  String content = '';
+  // 입력한 가격
+  double price = 0.0;
 
   // 제목 업데이트
-  void updateTitle({required String text}) {
-    title = text;
+  void updateName({required String text}) {
+    name = text;
   }
 
-  // 설명 업데이트
-  void updateDescription({required String text}) {
-    description = text;
+  // 내용 업데이트
+  void updateContent({required String text}) {
+    content = text;
+  }
+
+  // 가격 업데이트
+  void updatePrice({required double text}) {
+    price = text;
   }
 
   // 사진 추가하기 아이콘
@@ -52,7 +59,6 @@ class DescriptionController extends GetxController {
   // 사진을 고른 후 이미지 리스트에다가 삽입한다
   Future<void> loadImages() async {
     List<Asset> resultList = <Asset>[];
-
     try {
       resultList = await MultiImagePicker.pickImages(
         maxImages: 9,

@@ -16,10 +16,20 @@ class UploadContents extends StatefulWidget {
 }
 
 class _UploadContentsState extends State<UploadContents> {
-  TextEditingController textController = TextEditingController();
-  double screenWidth = SizeConfig.screenWidth;
-  final reviewController = Get.put(DescriptionController());
+  final double screenWidth = SizeConfig.screenWidth;
+  final postController = Get.put(PostController());
   bool _switchValue = false;
+  Widget customHint({required String title}) {
+    return Text(
+      title,
+      textScaleFactor: 1.5,
+      style: TextStyle(
+        color: kTextColor,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -29,36 +39,21 @@ class _UploadContentsState extends State<UploadContents> {
         children: [
           // 이미지를 업로드 한다
           Padding(
-            padding: const EdgeInsets.only(bottom: 15),
-            child: Text(
-              '图像',
-              textScaleFactor: 1.5,
-              style: TextStyle(
-                color: kTextColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+              padding: const EdgeInsets.only(bottom: 15),
+              child: customHint(title: '图像')),
           UploadImages(),
           KDivider(height: 40),
           // 제목을 업로드 한다
-          Text(
-            '标题',
-            textScaleFactor: 1.5,
-            style: TextStyle(
-              color: kTextColor,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          UploadTexts(upload: Upload.title),
+          customHint(title: '标题'),
+          UploadTexts(upload: Upload.name),
           KDivider(height: 40),
           // 금액을 입력한다 & 협상 가능 여부
           Container(
-            height: 30,
+            height: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("금액을 입력한다"),
+                UploadTexts(upload: Upload.price),
                 Row(
                   children: [
                     CupertinoSwitch(
@@ -75,20 +70,10 @@ class _UploadContentsState extends State<UploadContents> {
               ],
             ),
           ),
-          KDivider(height: 20),
+          KDivider(height: 40),
           // 본 게시물 내용을 입력한다
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: Text(
-              '게시물 내용',
-              textScaleFactor: 1.5,
-              style: TextStyle(
-                color: kTextColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          UploadTexts(upload: Upload.description),
+          customHint(title: '内容'),
+          UploadTexts(upload: Upload.content),
         ],
       ),
     );

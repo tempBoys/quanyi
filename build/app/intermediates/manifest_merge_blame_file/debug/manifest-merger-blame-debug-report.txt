@@ -176,43 +176,60 @@
 114
 115        <!-- End Pushy Declarations -->
 116        <provider
-116-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:12:9-20:20
-117            android:name="com.sangcomz.fishbun.FishBunFileProvider"
-117-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:13:13-68
-118            android:authorities="com.tempBoys.quanyi.fishbunfileprovider"
-118-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:14:13-71
+116-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
+117            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+117-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
+118            android:authorities="com.tempBoys.quanyi.flutter.image_provider"
+118-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
 119            android:exported="false"
-119-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:15:13-37
+119-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
 120            android:grantUriPermissions="true" >
-120-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:16:13-47
+120-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
 121            <meta-data
-121-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:17:13-19:58
+121-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
 122                android:name="android.support.FILE_PROVIDER_PATHS"
-122-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:18:17-67
-123                android:resource="@xml/provider_paths" />
-123-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:19:17-55
+122-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+123                android:resource="@xml/flutter_image_picker_file_paths" />
+123-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
 124        </provider>
-125
-126        <activity
-126-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:22:9-25:51
-127            android:name="com.sangcomz.fishbun.ui.album.AlbumActivity"
-127-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:23:13-71
-128            android:label="@string/album"
-128-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:24:13-42
-129            android:theme="@style/FishBunTheme" />
-129-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:25:13-48
-130        <activity
-130-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:26:9-28:51
-131            android:name="com.sangcomz.fishbun.ui.picker.PickerActivity"
-131-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:27:13-73
-132            android:theme="@style/FishBunTheme" />
-132-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:28:13-48
-133        <activity
-133-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:29:9-31:54
-134            android:name="com.sangcomz.fishbun.ui.detail.DetailActivity"
-134-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:30:13-73
-135            android:theme="@style/DetailViewTheme" />
-135-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:31:13-51
-136    </application>
-137
-138</manifest>
+125        <provider
+125-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:12:9-20:20
+126            android:name="com.sangcomz.fishbun.FishBunFileProvider"
+126-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:13:13-68
+127            android:authorities="com.tempBoys.quanyi.fishbunfileprovider"
+127-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:14:13-71
+128            android:exported="false"
+128-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:15:13-37
+129            android:grantUriPermissions="true" >
+129-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:16:13-47
+130            <meta-data
+130-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
+131                android:name="android.support.FILE_PROVIDER_PATHS"
+131-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+132                android:resource="@xml/provider_paths" />
+132-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
+133        </provider>
+134
+135        <activity
+135-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:22:9-25:51
+136            android:name="com.sangcomz.fishbun.ui.album.AlbumActivity"
+136-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:23:13-71
+137            android:label="@string/album"
+137-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:24:13-42
+138            android:theme="@style/FishBunTheme" />
+138-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:25:13-48
+139        <activity
+139-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:26:9-28:51
+140            android:name="com.sangcomz.fishbun.ui.picker.PickerActivity"
+140-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:27:13-73
+141            android:theme="@style/FishBunTheme" />
+141-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:28:13-48
+142        <activity
+142-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:29:9-31:54
+143            android:name="com.sangcomz.fishbun.ui.detail.DetailActivity"
+143-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:30:13-73
+144            android:theme="@style/DetailViewTheme" />
+144-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:31:13-51
+145    </application>
+146
+147</manifest>

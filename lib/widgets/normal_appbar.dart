@@ -5,16 +5,20 @@ class NormalAppbar extends StatelessWidget implements PreferredSizeWidget {
   // title : String으로 주면 텍스트가, Widget으로 주면 위젯이 앱바의 타이틀이 된다
   // isTitleText : true일시 title은 텍스트로 와야한다
   // actions : 일반 앱바의 actions와 동일하다
+  // height : 앱바의 총 높이
   final title;
   final bool isTitleText;
   final List<Widget>? actions;
-
-  NormalAppbar(
-      {Key? key, this.title = '', this.actions, this.isTitleText = true})
-      : super(key: key);
-
+  final height;
+  NormalAppbar({
+    Key? key,
+    this.title = '',
+    this.actions,
+    this.isTitleText = true,
+    this.height = 60.0,
+  }) : super(key: key);
   @override
-  Size get preferredSize => const Size(double.infinity, 60);
+  Size get preferredSize => Size(double.infinity, height);
 
   @override
   Widget build(BuildContext context) {

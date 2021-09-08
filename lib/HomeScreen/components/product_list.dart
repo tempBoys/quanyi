@@ -50,14 +50,14 @@ class ProductList extends StatelessWidget {
                     SizedBox(height: 5),
                     // 판매 위치
                     Text(
-                      "地址",
+                      "게시한 날짜",
                       textScaleFactor: 0.9,
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(height: 5),
                     // 상품 가격
                     Text(
-                      numFormatter.format(2020.20),
+                      numFormatter.format(2020.20), // 가격
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: kTextColor, fontWeight: FontWeight.bold),

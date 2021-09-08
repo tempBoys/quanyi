@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quanyi/ChatsScreen/components/messages/body.dart';
 import 'package:quanyi/models/constants.dart';
-import 'package:quanyi/widgets/normal_appbar.dart';
+import 'package:quanyi/widgets/normal_appbar_with_bottom.dart';
 
 class MessagesScreen extends StatelessWidget {
   const MessagesScreen({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class MessagesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NormalAppbar(
+      appBar: NormalAppbarWithBottom(
         isTitleText: false,
         title: Row(
           children: [

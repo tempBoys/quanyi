@@ -9,9 +9,7 @@ class ChatsScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: chatsData.length,
-      itemBuilder: (context, index) => ChatCard(
-        chat: chatsData[index],
-      ),
+      itemBuilder: (context, index) => ChatCard(chat: chatsData[index]),
     );
   }
 }

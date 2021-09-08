@@ -5,8 +5,14 @@ import 'package:quanyi/UploadScreen/components/upload_contents.dart';
 import 'package:quanyi/UploadScreen/getxControllers/post_controller.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 
-class UploadScreen extends StatelessWidget {
+class UploadScreen extends StatefulWidget {
   UploadScreen({Key? key}) : super(key: key);
+
+  @override
+  _UploadScreenState createState() => _UploadScreenState();
+}
+
+class _UploadScreenState extends State<UploadScreen> {
   final postController = Get.put(PostController());
 
   @override

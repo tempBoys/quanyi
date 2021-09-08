@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:multi_image_picker2/multi_image_picker2.dart';
+import 'package:quanyi/models/utils/api_helper.dart';
 
 class PostController extends GetxController {
   // 삽입할 이미지 리스트
@@ -13,6 +14,8 @@ class PostController extends GetxController {
   double price = 0.0;
   // 협상 여부
   RxBool negotiable = false.obs;
+  //
+  ApiHelper apiHelper = ApiHelper();
 
   // 제목 업데이트
   void updateName({required String text}) {
@@ -77,5 +80,9 @@ class PostController extends GetxController {
       print(e);
     }
     images.value = resultList;
+  }
+
+  Future<void> upload({required Map<String, dynamic> productData}) async {
+    await apiHelper.postProduct(productData: productData);
   }
 }

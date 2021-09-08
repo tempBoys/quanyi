@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/MyPageScreen/screens/my_page_main_screen.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/widgets/normal_button.dart';
@@ -12,8 +13,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String userName = "${Get.arguments}";
-  String tempUserName = "${Get.arguments}";
+  final _formKey = GlobalKey<FormState>();
+
+  String userName = "${Get.arguments["name"]}";
+  String tempUserName = "${Get.arguments["name"]}";
+
+  String address = "${Get.arguments["address"]}";
+  String tempAddress = "${Get.arguments["address"]}";
 
   Future<bool?> showWarning(BuildContext context) async {
     return showDialog(
@@ -62,49 +68,93 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         body: Padding(
           padding: EdgeInsets.all(13.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                radius: 40.w,
-                backgroundImage: NetworkImage(
-                    "http://cdn.cnn.com/cnnnext/dam/assets/191201230412-01-mohe-china-super-tease.jpg"),
-              ),
-              TextFormField(
-                initialValue: "${Get.arguments}",
-                onSaved: (newValue) => tempUserName = newValue!,
-                onChanged: (value) {
-                  setState(() {
-                    tempUserName = value;
-                  });
-                },
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "名字不能为空";
-                  }
-                  return null;
-                },
-                decoration: InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  labelText: "请输入名字",
-                  hintStyle: TextStyle(height: 2, fontWeight: FontWeight.bold),
-                  hintText: "",
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 40.w,
+                  backgroundImage: NetworkImage(
+                      "http://cdn.cnn.com/cnnnext/dam/assets/191201230412-01-mohe-china-super-tease.jpg"),
                 ),
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
-              BottomBarButton(
-                onTap: () {
-                  Get.back();
-                },
-                backgroundColor: Colors.black,
-                text: "确定",
-                textColor: Colors.white,
-                textScaleFactor: 1.5.h,
-                height: 60.h,
-              ),
-            ],
+                TextFormField(
+                  initialValue: "${Get.arguments["name"]}",
+                  onSaved: (newValue) => tempUserName = newValue!,
+                  onChanged: (value) {
+                    setState(() {
+                      tempUserName = value;
+                    });
+                  },
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "名字不能为空";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    labelText: "请输入名字",
+                    hintStyle:
+                        TextStyle(height: 2, fontWeight: FontWeight.bold),
+                    hintText: "",
+                  ),
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                TextFormField(
+                  initialValue: "${Get.arguments["address"]}",
+                  onSaved: (newValue) => tempAddress = newValue!,
+                  onChanged: (value) {
+                    setState(() {
+                      tempAddress = value;
+                    });
+                  },
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "地址不能为空";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    labelText: "请输入地址",
+                    hintStyle:
+                        TextStyle(height: 2, fontWeight: FontWeight.bold),
+                    hintText: "",
+                  ),
+                ),
+                SizedBox(
+                  height: 40.h,
+                ),
+                BottomBarButton(
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      MyPageMainScreen.userName = tempUserName;
+                      MyPageMainScreen.address = tempAddress;
+                      Get.back();
+                    }
+                  },
+                  backgroundColor: Colors.black,
+                  text: "确定",
+                  textColor: Colors.white,
+                  textScaleFactor: 1.5.h,
+                  height: 60.h,
+                ),
+                SizedBox(
+                  height: 15.h,
+                ),
+                BottomBarButton(
+                  onTap: () {},
+                  backgroundColor: Colors.white,
+                  text: "退出",
+                  textColor: Colors.black,
+                  textScaleFactor: 1.5.h,
+                  height: 60.h,
+                ),
+              ],
+            ),
           ),
         ),
       ),

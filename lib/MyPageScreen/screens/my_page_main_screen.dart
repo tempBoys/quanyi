@@ -14,7 +14,8 @@ import 'package:quanyi/widgets/kdivider.dart';
 class MyPageMainScreen extends StatelessWidget {
   MyPageMainScreen({Key? key}) : super(key: key);
 
-  String userName = "User Name";
+  static String userName = "User Name";
+  static String address = "北京市海淀区燕园街道";
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,8 @@ class MyPageMainScreen extends StatelessWidget {
               textScaleFactor: 1.5.h,
               height: 50.h,
               onTap: () {
-                Get.to(() => ProfileScreen(), arguments: userName);
+                Get.to(() => ProfileScreen(),
+                    arguments: {"name": userName, "address": address});
               },
             ),
             SizedBox(

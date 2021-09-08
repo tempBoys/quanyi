@@ -115,19 +115,15 @@ class _OnSaleProductState extends State<OnSaleProduct> {
                   : Row(
                       children: [
                         Expanded(
-                          flex: ongoing ? 0 : 1,
-                          child: AnimatedSwitcher(
-                            duration: Duration(seconds: 0),
-                            child: GestureDetector(
-                              child: Center(
-                                child: Text("改成交易中"),
-                              ),
-                              onTap: () {
-                                setState(() {
-                                  ongoing = true;
-                                });
-                              },
+                          child: GestureDetector(
+                            child: Center(
+                              child: Text("改成交易中"),
                             ),
+                            onTap: () {
+                              setState(() {
+                                ongoing = true;
+                              });
+                            },
                           ),
                         ),
                         Expanded(

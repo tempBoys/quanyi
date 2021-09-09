@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quanyi/ProductDetailScreen/components/shopper_info/shopper_review_list_template.dart';
+import 'package:quanyi/ProductDetailScreen/components/user_info/user_review_list_template.dart';
 import 'package:quanyi/models/constants.dart';
 
-class ShopperReviewList extends StatelessWidget {
-  const ShopperReviewList({Key? key}) : super(key: key);
+class UserReviewList extends StatelessWidget {
+  const UserReviewList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ShopperReviewList extends StatelessWidget {
           return index != 4
               ? Padding(
                   padding: const EdgeInsets.only(right: 15.0),
-                  child: ShopperReviewListTemplate(),
+                  child: UserReviewListTemplate(),
                 )
               : GestureDetector(
                   child: Container(

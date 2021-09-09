@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:quanyi/ProductDetailScreen/components/shopper_info/gpa_graph.dart';
-import 'package:quanyi/ProductDetailScreen/components/shopper_info/info_card.dart';
-import 'package:quanyi/ProductDetailScreen/components/shopper_info/shopper_review_list.dart';
-import 'package:quanyi/models/constants.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:quanyi/ProductDetailScreen/components/user_info/gpa_graph.dart';
+import 'package:quanyi/ProductDetailScreen/components/user_info/info_card.dart';
+import 'package:quanyi/ProductDetailScreen/components/user_info/user_review_list.dart';
 
-class ShopperInfo extends StatelessWidget {
+class UserInfo extends StatelessWidget {
   final userName;
   final location;
-  ShopperInfo({
+  UserInfo({
     Key? key,
     required this.userName,
     this.location: "北京大学中关新园3号楼",
@@ -64,7 +62,7 @@ class ShopperInfo extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 15, bottom: 18),
-          child: ShopperReviewList(),
+          child: UserReviewList(),
         ),
       ],
     );

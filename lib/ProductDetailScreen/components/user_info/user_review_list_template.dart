@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quanyi/models/constants.dart';
 
-class ShopperReviewListTemplate extends StatelessWidget {
-  const ShopperReviewListTemplate({Key? key}) : super(key: key);
+class UserReviewListTemplate extends StatelessWidget {
+  const UserReviewListTemplate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

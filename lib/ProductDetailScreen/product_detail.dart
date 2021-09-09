@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/components/product_detail_appbar.dart';
 import 'package:quanyi/ProductDetailScreen/components/product_detail_bottombar.dart';
-import 'package:quanyi/ProductDetailScreen/components/shopper_info.dart';
+import 'package:quanyi/ProductDetailScreen/components/user_info.dart';
 import 'package:quanyi/ProductDetailScreen/components/product_detail_product_basic_info.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_detail_scroll_controller.dart';
 import 'package:quanyi/widgets/kdivider.dart';
@@ -46,7 +46,7 @@ class ProductDetailScreen extends StatelessWidget {
                 // 배송 정보를 보여준다
                 Padding(
                   padding: const EdgeInsets.fromLTRB(15, 15, 15, 21.5),
-                  child: ShopperInfo(
+                  child: UserInfo(
                     userName: productData["user"]["user_name"],
                   ),
                 ),

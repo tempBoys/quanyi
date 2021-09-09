@@ -11,7 +11,6 @@ class ApiHelper {
   final serverUrl = "http://d9eb-124-14-224-4.ngrok.io/";
   final String userToken =
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMDQxOTM2LCJleHAiOjE2NjI1Nzc5MzZ9.QyHWPs-K83p_Y-FZLbeSwtUtyX8ofZOp-HqABcvwDz4";
-  bool _completed = false;
 
   // 유저 정보를 불러온다
   Future<Map<String, dynamic>> getUser({required int id}) async {
@@ -59,19 +58,17 @@ class ApiHelper {
       }
 
       request.headers.addAll(headers);
-      http.StreamedResponse response = await request.send();
+      await request.send();
       Get.back();
-      if (response.statusCode == 200) {
-        Get.off(() => Scaffold(
-              appBar: NormalAppbar(title: "上传成功"),
-              body: Center(
-                child: Text("感谢使用！"),
-              ),
-            ));
-      } else {
-        Get.snackbar("上传失败", "请检查一下网络状态");
-      }
+
+      Get.off(() => Scaffold(
+            appBar: NormalAppbar(title: "上传成功"),
+            body: Center(
+              child: Text("感谢使用！"),
+            ),
+          ));
     } catch (e) {
+      Get.snackbar("上传失败", "请检查一下网络状态");
       print(e);
     }
   }

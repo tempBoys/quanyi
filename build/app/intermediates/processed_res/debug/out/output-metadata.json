@@ -4,7 +4,7 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.tempBoys.quanyi",
+  "applicationId": "com.example.quanyi",
   "variantName": "processDebugResources",
   "elements": [
     {

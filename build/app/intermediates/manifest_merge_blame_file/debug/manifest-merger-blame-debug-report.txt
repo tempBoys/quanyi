@@ -1,235 +1,133 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.tempBoys.quanyi"
+3    package="com.example.quanyi"
 4    android:versionCode="1"
-5    android:versionName="1.0.0" > <!-- End Pushy Permissions -->
-6    <uses-sdk
-7        android:minSdkVersion="16"
-8        android:targetSdkVersion="30" />
-9    <!--
-10         Flutter needs it to communicate with the running application
-11         to allow setting breakpoints, to provide hot reload, etc.
-12    -->
-13    <uses-permission android:name="android.permission.INTERNET" />
-13-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:82:3-65
-13-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:82:20-62
-14    <uses-permission android:name="android.permission.WAKE_LOCK" />
-14-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:83:3-66
-14-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:83:20-63
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:84:3-77
-15-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:84:20-74
-16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-16-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:85:3-79
-16-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:85:20-76
-17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-17-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:86:3-78
-17-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:86:20-76
-18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:87:3-77
-18-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:87:20-75
-19
-20    <application
-20-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:3:4-79:19
-21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.1.0] /Users/ts/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:18-86
-22        android:debuggable="true"
-23        android:icon="@mipmap/ic_launcher"
-23-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:5:9-43
-24        android:label="quanyi" >
-24-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:4:9-31
-25        <activity
-25-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:6:9-34:20
-26            android:name="com.example.quanyi.MainActivity"
-26-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:7:13-41
-27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-27-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:10:13-163
-28            android:hardwareAccelerated="true"
-28-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:11:13-47
-29            android:launchMode="singleTop"
-29-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:8:13-43
-30            android:theme="@style/LaunchTheme"
-30-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:9:13-47
-31            android:windowSoftInputMode="adjustResize" >
-31-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:12:13-55
-32
-33            <!--
-34                 Specifies an Android theme to apply to this Activity as soon as
-35                 the Android process has started. This theme is visible to the user
-36                 while the Flutter UI initializes. After that, this theme continues
-37                 to determine the Window background behind the Flutter UI.
-38            -->
-39            <meta-data
-39-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:17:13-20:17
-40                android:name="io.flutter.embedding.android.NormalTheme"
-40-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:18:15-70
-41                android:resource="@style/NormalTheme" />
-41-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:19:15-52
-42            <!--
-43                 Displays an Android View that continues showing the launch screen
-44                 Drawable until Flutter paints its first frame, then this splash
-45                 screen fades out. A splash screen is useful to avoid any visual
-46                 gap between the end of Android's launch screen and the painting of
-47                 Flutter's first frame.
-48            -->
-49            <meta-data
-49-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:26:13-29:17
-50                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-50-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:27:15-79
-51                android:resource="@drawable/launch_background" />
-51-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:28:15-61
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:41:5-80
+15-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:41:22-78
+16
+17    <application
+17-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:3:4-40:19
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.1.0] /Users/ts/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:5:9-43
+21        android:label="quanyi" >
+21-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:4:9-31
+22        <activity
+22-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:6:9-34:20
+23            android:name="com.example.quanyi.MainActivity"
+23-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:7:13-41
+24            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+24-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:10:13-163
+25            android:hardwareAccelerated="true"
+25-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:11:13-47
+26            android:launchMode="singleTop"
+26-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:8:13-43
+27            android:theme="@style/LaunchTheme"
+27-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:9:13-47
+28            android:windowSoftInputMode="adjustResize" >
+28-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:12:13-55
+29
+30            <!--
+31                 Specifies an Android theme to apply to this Activity as soon as
+32                 the Android process has started. This theme is visible to the user
+33                 while the Flutter UI initializes. After that, this theme continues
+34                 to determine the Window background behind the Flutter UI.
+35            -->
+36            <meta-data
+36-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:17:13-20:17
+37                android:name="io.flutter.embedding.android.NormalTheme"
+37-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:18:15-70
+38                android:resource="@style/NormalTheme" />
+38-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:19:15-52
+39            <!--
+40                 Displays an Android View that continues showing the launch screen
+41                 Drawable until Flutter paints its first frame, then this splash
+42                 screen fades out. A splash screen is useful to avoid any visual
+43                 gap between the end of Android's launch screen and the painting of
+44                 Flutter's first frame.
+45            -->
+46            <meta-data
+46-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:26:13-29:17
+47                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+47-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:27:15-79
+48                android:resource="@drawable/launch_background" />
+48-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:28:15-61
+49
+50            <intent-filter>
+50-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:30:13-33:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:31:17-68
+51-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:31:25-66
 52
-53            <intent-filter>
-53-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:30:13-33:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:31:17-68
-54-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:31:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:32:17-76
-56-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:32:27-74
-57            </intent-filter>
-58        </activity>
-59        <!--
-60             Don't delete the meta-data below.
-61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-62        -->
-63        <meta-data
-63-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:37:9-39:33
-64            android:name="flutterEmbedding"
-64-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:38:13-44
-65            android:value="2" />
-65-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:39:13-30
-66
-67        <!-- Pushy Declarations -->
-68
-69
-70        <!-- Internal Notification Receiver -->
-71        <!-- Do not modify - internal BroadcastReceiver that sends notifications to your Flutter app -->
-72        <receiver
-72-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:45:9-50:20
-73            android:name="me.pushy.sdk.flutter.internal.PushyInternalReceiver"
-73-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:45:19-85
-74            android:exported="false" >
-74-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:45:86-110
-75            <intent-filter>
-75-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:46:13-49:29
-76
-77                <!-- Do not modify this -->
-78                <action android:name="pushy.me" />
-78-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:48:17-51
-78-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:48:25-48
-79            </intent-filter>
-80        </receiver>
-81
-82        <!-- Pushy Update Receiver -->
-83        <!-- Do not modify - internal BroadcastReceiver that restarts the listener service -->
-84        <receiver
-84-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:54:9-58:20
-85            android:name="me.pushy.sdk.receivers.PushyUpdateReceiver"
-85-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:54:19-76
-86            android:exported="false" >
-86-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:54:77-101
-87            <intent-filter>
-87-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:55:13-57:29
-88                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-88-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:56:17-84
-88-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:56:25-81
-89            </intent-filter>
-90        </receiver>
-91
-92        <!-- Pushy Boot Receiver -->
-93        <!-- Do not modify - internal BroadcastReceiver that restarts the listener service -->
-94        <receiver
-94-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:62:9-66:20
-95            android:name="me.pushy.sdk.receivers.PushyBootReceiver"
-95-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:62:19-74
-96            android:exported="false" >
-96-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:62:75-99
-97            <intent-filter>
-97-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:63:13-65:29
-98                <action android:name="android.intent.action.BOOT_COMPLETED" />
-98-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:64:17-78
-98-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:64:25-76
-99            </intent-filter>
-100        </receiver>
-101
-102        <!-- Pushy Socket Service -->
-103        <!-- Do not modify - internal service -->
-104        <service
-104-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:70:9-105
-105            android:name="me.pushy.sdk.services.PushySocketService"
-105-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:70:18-73
-106            android:stopWithTask="false" />
-106-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:70:74-102
-107
-108        <!-- Pushy Job Service (added in Pushy SDK 1.0.35) -->
-109        <!-- Do not modify - internal service -->
-110        <service
-110-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:74:9-76:44
-111            android:name="me.pushy.sdk.services.PushyJobService"
-111-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:74:18-70
-112            android:permission="android.permission.BIND_JOB_SERVICE"
-112-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:75:13-69
-113            android:stopWithTask="false" />
-113-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:76:13-41
-114
-115        <!-- End Pushy Declarations -->
-116        <provider
-116-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
-117            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-117-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
-118            android:authorities="com.tempBoys.quanyi.flutter.image_provider"
-118-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
-119            android:exported="false"
-119-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
-120            android:grantUriPermissions="true" >
-120-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
-121            <meta-data
-121-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
-122                android:name="android.support.FILE_PROVIDER_PATHS"
-122-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
-123                android:resource="@xml/flutter_image_picker_file_paths" />
-123-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
-124        </provider>
-125        <provider
-125-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:12:9-20:20
-126            android:name="com.sangcomz.fishbun.FishBunFileProvider"
-126-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:13:13-68
-127            android:authorities="com.tempBoys.quanyi.fishbunfileprovider"
-127-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:14:13-71
-128            android:exported="false"
-128-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:15:13-37
-129            android:grantUriPermissions="true" >
-129-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:16:13-47
-130            <meta-data
-130-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
-131                android:name="android.support.FILE_PROVIDER_PATHS"
-131-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
-132                android:resource="@xml/provider_paths" />
-132-->[:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
-133        </provider>
-134
-135        <activity
-135-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:22:9-25:51
-136            android:name="com.sangcomz.fishbun.ui.album.AlbumActivity"
-136-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:23:13-71
-137            android:label="@string/album"
-137-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:24:13-42
-138            android:theme="@style/FishBunTheme" />
-138-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:25:13-48
-139        <activity
-139-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:26:9-28:51
-140            android:name="com.sangcomz.fishbun.ui.picker.PickerActivity"
-140-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:27:13-73
-141            android:theme="@style/FishBunTheme" />
-141-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:28:13-48
-142        <activity
-142-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:29:9-31:54
-143            android:name="com.sangcomz.fishbun.ui.detail.DetailActivity"
-143-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:30:13-73
-144            android:theme="@style/DetailViewTheme" />
-144-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:31:13-51
-145    </application>
-146
-147</manifest>
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:32:17-76
+53-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:32:27-74
+54            </intent-filter>
+55        </activity>
+56        <!--
+57             Don't delete the meta-data below.
+58             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+59        -->
+60        <meta-data
+60-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:37:9-39:33
+61            android:name="flutterEmbedding"
+61-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:38:13-44
+62            android:value="2" />
+62-->/Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:39:13-30
+63
+64        <provider
+64-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:12:9-20:20
+65            android:name="com.sangcomz.fishbun.FishBunFileProvider"
+65-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:13:13-68
+66            android:authorities="com.example.quanyi.fishbunfileprovider"
+66-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:14:13-71
+67            android:exported="false"
+67-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:15:13-37
+68            android:grantUriPermissions="true" >
+68-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:16:13-47
+69            <meta-data
+69-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:17:13-19:58
+70                android:name="android.support.FILE_PROVIDER_PATHS"
+70-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:18:17-67
+71                android:resource="@xml/provider_paths" />
+71-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:19:17-55
+72        </provider>
+73
+74        <activity
+74-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:22:9-25:51
+75            android:name="com.sangcomz.fishbun.ui.album.AlbumActivity"
+75-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:23:13-71
+76            android:label="@string/album"
+76-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:24:13-42
+77            android:theme="@style/FishBunTheme" />
+77-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:25:13-48
+78        <activity
+78-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:26:9-28:51
+79            android:name="com.sangcomz.fishbun.ui.picker.PickerActivity"
+79-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:27:13-73
+80            android:theme="@style/FishBunTheme" />
+80-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:28:13-48
+81        <activity
+81-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:29:9-31:54
+82            android:name="com.sangcomz.fishbun.ui.detail.DetailActivity"
+82-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:30:13-73
+83            android:theme="@style/DetailViewTheme" />
+83-->[com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:31:13-51
+84    </application>
+85
+86</manifest>

@@ -27,7 +27,7 @@ class ProductList extends StatelessWidget {
                 width: 75,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
-                  color: Colors.indigo,
+                  color: kAccentColor,
                 ),
               ),
             ),
@@ -42,25 +42,36 @@ class ProductList extends StatelessWidget {
                   children: [
                     // 상품 이름
                     Text(
-                      "상품의 이름들",
+                      "상품 이름",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(color: kTextColor),
                     ),
                     SizedBox(height: 5),
-                    // 판매 위치
+                    // 유저의 주소 | 게시 날짜
                     Text(
-                      "게시한 날짜",
+                      "유저의 주소 | 게시한 날짜",
                       textScaleFactor: 0.9,
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(height: 5),
-                    // 상품 가격
+                    // 상품 가격 | 협상여부
                     Text(
-                      numFormatter.format(2020.20), // 가격
+                      "${numFormatter.format(2020.20)} 元 | 협상 가능 여부", // 가격
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: kTextColor, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 2.5),
+                    // 상품을 구경한 횟수
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        "X 명이 이 상품을 클릭했어요",
+                        textScaleFactor: 0.9,
+                        textAlign: TextAlign.right,
+                        style: TextStyle(color: kTextLightColor),
+                      ),
                     ),
                   ],
                 ),
@@ -71,7 +82,7 @@ class ProductList extends StatelessWidget {
       ),
       onTap: () async {
         // 상품을 불러와 상세 스크린으로 이동한다
-        final productData = await apiHelper.getProduct(id: 36);
+        final productData = await apiHelper.getProduct(id: id);
         Get.to(() => ProductDetailScreen(), arguments: productData);
       },
       onDoubleTap: () {},

@@ -56,6 +56,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_lints",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_swiper_null_safety",
       "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_swiper_null_safety-1.0.2",
       "packageUri": "lib/",
@@ -92,6 +98,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "lints",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.10",
       "packageUri": "lib/",
@@ -118,12 +130,6 @@
     {
       "name": "pedantic",
       "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "pushy_flutter",
-      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/pushy_flutter-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -159,13 +165,13 @@
     },
     {
       "name": "syncfusion_flutter_core",
-      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-19.2.59",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-19.2.60",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "syncfusion_flutter_gauges",
-      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_gauges-19.2.59",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_gauges-19.2.60",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,7 +212,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-08T16:47:29.504047Z",
+  "generated": "2021-09-09T15:28:21.789160Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.tempBoys.quanyi",
+  "applicationId": "com.example.quanyi",
   "variantName": "processDebugResources",
   "elements": [
     {

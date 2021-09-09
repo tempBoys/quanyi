@@ -1,13 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
-INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
-INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
-INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
-MERGED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
-MERGED from [:pushy_flutter] /Users/ts/Desktop/quanyi/build/pushy_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-19:12
-MERGED from [:flutter_plugin_android_lifecycle] /Users/ts/Desktop/quanyi/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
+INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
+INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
+INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
+MERGED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
 MERGED from [:multi_image_picker2] /Users/ts/Desktop/quanyi/build/multi_image_picker2/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:uri_to_file] /Users/ts/Desktop/quanyi/build/uri_to_file/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:2:1-34:12
@@ -56,18 +53,16 @@ INJECTED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
+		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-89:12
+		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:1-42:12
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:11-69
 application
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:3:4-79:19
-MERGED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-17:19
-MERGED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-17:19
+ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:3:4-40:19
 MERGED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:11:5-32:19
 MERGED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:11:5-32:19
 MERGED from [com.github.bumptech.glide:glide:4.11.0] /Users/ts/.gradle/caches/transforms-2/files-2.1/79f8042ebd63447be6ff90d2fc150f51/jetified-glide-4.11.0/AndroidManifest.xml:10:5-20
@@ -130,92 +125,14 @@ ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:37:
 		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:39:13-30
 	android:name
 		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:38:13-44
-receiver#me.pushy.sdk.flutter.internal.PushyInternalReceiver
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:45:9-50:20
-	android:exported
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:45:86-110
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:45:19-85
-intent-filter#action:name:pushy.me
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:46:13-49:29
-action#pushy.me
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:48:17-51
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:48:25-48
-receiver#me.pushy.sdk.receivers.PushyUpdateReceiver
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:54:9-58:20
-	android:exported
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:54:77-101
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:54:19-76
-intent-filter#action:name:android.intent.action.MY_PACKAGE_REPLACED
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:55:13-57:29
-action#android.intent.action.MY_PACKAGE_REPLACED
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:56:17-84
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:56:25-81
-receiver#me.pushy.sdk.receivers.PushyBootReceiver
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:62:9-66:20
-	android:exported
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:62:75-99
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:62:19-74
-intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:63:13-65:29
-action#android.intent.action.BOOT_COMPLETED
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:64:17-78
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:64:25-76
-service#me.pushy.sdk.services.PushySocketService
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:70:9-105
-	android:stopWithTask
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:70:74-102
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:70:18-73
-service#me.pushy.sdk.services.PushyJobService
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:74:9-76:44
-	android:permission
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:75:13-69
-	android:stopWithTask
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:76:13-41
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:74:18-70
-uses-permission#android.permission.INTERNET
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:82:3-65
-MERGED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:82:3-65
-MERGED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:82:3-65
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:82:20-62
-uses-permission#android.permission.WAKE_LOCK
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:83:3-66
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:83:20-63
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:84:3-77
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:84:20-74
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:85:3-79
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:85:20-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:86:3-78
+ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:41:5-80
 	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:86:20-76
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:87:3-77
-	android:name
-		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:87:20-75
+		ADDED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:41:22-78
 uses-sdk
 INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml
-MERGED from [:pushy_flutter] /Users/ts/Desktop/quanyi/build/pushy_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:pushy_flutter] /Users/ts/Desktop/quanyi/build/pushy_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /Users/ts/Desktop/quanyi/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_plugin_android_lifecycle] /Users/ts/Desktop/quanyi/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:multi_image_picker2] /Users/ts/Desktop/quanyi/build/multi_image_picker2/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:multi_image_picker2] /Users/ts/Desktop/quanyi/build/multi_image_picker2/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:uri_to_file] /Users/ts/Desktop/quanyi/build/uri_to_file/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
@@ -302,22 +219,10 @@ INJECTED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml
-provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
-ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
-	android:grantUriPermissions
-		ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
-	android:authorities
-		ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
-	android:exported
-		ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+uses-permission#android.permission.INTERNET
+ADDED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
-	android:resource
-		ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
-	android:name
-		ADDED from [:image_picker] /Users/ts/Desktop/quanyi/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+		ADDED from /Users/ts/Desktop/quanyi/android/app/src/debug/AndroidManifest.xml:6:22-64
 provider#com.sangcomz.fishbun.FishBunFileProvider
 ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:12:9-20:20
 	android:grantUriPermissions
@@ -328,6 +233,12 @@ ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/f
 		ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:15:13-37
 	android:name
 		ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:13:13-68
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:17:13-19:58
+	android:resource
+		ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:19:17-55
+	android:name
+		ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:18:17-67
 activity#com.sangcomz.fishbun.ui.album.AlbumActivity
 ADDED from [com.sangcomz:FishBun:0.11.2] /Users/ts/.gradle/caches/transforms-2/files-2.1/964d33c2c2e431651e8444baf8fdaeb6/jetified-FishBun-0.11.2/AndroidManifest.xml:22:9-25:51
 	android:label

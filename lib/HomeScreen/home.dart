@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/SearchScreen/screens/search_screen.dart';
 import 'package:quanyi/UploadScreen/upload.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/kdivider.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(CupertinoIcons.search),
-            onPressed: () {},
+            onPressed: () => Get.to(() => SearchScreen()),
           ),
           IconButton(
             icon: Icon(CupertinoIcons.bell),

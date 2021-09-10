@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ts/Desktop/quanyi/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "C:\\Users\\user\\Desktop\\quanyi\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/ts/Desktop/quanyi/android/app/src/main/res/values-night/styles.xml",
+                    "source": "C:\\Users\\user\\Desktop\\quanyi\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
-                        "startOffsets": "172,815",
+                        "startOffsets": "175,829",
                         "endLines": "7,16",
                         "endColumns": "12,12",
-                        "endOffsets": "464,979"
+                        "endOffsets": "471,995"
                     },
                     "to": {
                         "startLines": "2,7",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ts/.gradle/caches/transforms-2/files-2.1/bc68daddfcef12c0f038508869cd86eb/appcompat-1.0.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\bc68daddfcef12c0f038508869cd86eb\\appcompat-1.0.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

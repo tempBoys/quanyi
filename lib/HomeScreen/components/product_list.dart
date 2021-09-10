@@ -13,11 +13,11 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        height: 100,
+        height: 120,
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(
               flex: 2,
@@ -42,12 +42,15 @@ class ProductList extends StatelessWidget {
                   children: [
                     // 상품 이름
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(
-                          "상품 이름",
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: kTextColor),
+                        Expanded(
+                          child: Text(
+                            "상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(color: kTextColor),
+                          ),
                         ),
                         SizedBox(width: 5),
                         Container(

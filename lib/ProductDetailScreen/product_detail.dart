@@ -59,6 +59,7 @@ class ProductDetailScreen extends StatelessWidget {
 
         // 찜 버튼과 구매하기 버튼이 있는 바텀바
         bottomNavigationBar: ProductDetailScreenBottomBar(
+          id: productData["id"],
           price: productData["price"],
           negotiable: productData["negotiable"],
           view: productData["view"],

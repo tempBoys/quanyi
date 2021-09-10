@@ -48,7 +48,10 @@ class ApiHelper {
       request.fields["name"] = productData["name"];
       request.fields["price"] = productData["price"].toString();
       request.fields["content"] = productData["content"];
-      request.fields["negotiable"] = productData["negotiable"].toString();
+      request.fields["negotiable"] =
+          productData["negotiable"] == true ? "1" : "0";
+      print(request.fields["negotiable"]);
+
       for (var file in productData["images"]) {
         Uri uri = Uri.parse(file.identifier);
         File tempFile = await toFile(uri);

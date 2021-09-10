@@ -3,22 +3,26 @@ import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_controller.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_detail_scroll_controller.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/models/utils/fav_storage.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 import 'package:quanyi/widgets/lined_box.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
 class ProductDetailScreenBottomBar extends StatelessWidget {
+  final id;
   final price;
   final negotiable;
   final view;
   ProductDetailScreenBottomBar(
       {Key? key,
+      required this.id,
       required this.price,
       required this.negotiable,
       required this.view})
       : super(key: key);
   final productController = Get.put(ProductController());
   final bottombarController = Get.put(ProductDetailScreenScrollController());
+  final favStroage = Get.put(FavStorage());
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +66,9 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
                                   color: kAccentColor,
                                 ),
                           onTap: () {
+                            productController.isFav.value == false
+                                ? favStroage.add(id: id)
+                                : favStroage.delete(id: id);
                             productController.isFav.value =
                                 !productController.isFav.value;
                           },

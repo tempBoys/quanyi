@@ -35,6 +35,22 @@ class ApiHelper {
     }
   }
 
+  // 유저의 디바이스 토큰을 건네준다
+  Future<void> change({
+    required String phoneNumber,
+    required String password,
+    required String userName,
+    required String location,
+  }) async {
+    var userData = {
+      "phone_number": phoneNumber,
+      "password": password,
+      "user_name": userName,
+      "profile_image": "string",
+      "location": location
+    };
+  }
+
   // 상품을 등록한다
   Future<void> postProduct({required Map<String, dynamic> productData}) async {
     Get.defaultDialog(title: "正在上传中", middleText: "请稍后");

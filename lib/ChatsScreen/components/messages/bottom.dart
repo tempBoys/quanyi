@@ -21,11 +21,7 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GestureDetector(
-          child: Icon(
-            Icons.camera_alt_outlined,
-            size: 25,
-            color: kIconColor,
-          ),
+          child: Icon(Icons.camera_alt_outlined, size: 25, color: kIconColor),
           onTap: () {
             chatController.loadImages();
           },
@@ -33,29 +29,31 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
         SizedBox(width: kDefaultPadding * 0.75),
         Expanded(
           child: Container(
-              // height: 55,
+              height: 45,
               width: 120,
               child: TextFormField(
                 cursorColor: kTextColor,
-                minLines: 1,
-                maxLines: 6,
-                maxLength: 100,
+                maxLines: 1,
+                maxLength: 15,
                 controller: textController,
                 decoration: InputDecoration(
-                    suffixIcon: GestureDetector(
-                      child: Icon(
-                        Icons.close,
-                        size: 25,
-                        color: kIconColor,
-                      ),
-                      onTap: () {
-                        textController.clear();
-                      },
-                    ),
+                    suffixIcon: textController.text.length != 0
+                        ? GestureDetector(
+                            child: Icon(
+                              Icons.close,
+                              size: 25,
+                              color: kIconColor,
+                            ),
+                            onTap: () {
+                              textController.clear();
+                            })
+                        : Container(),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(6)),
                     counter: SizedBox(),
-                    hintText: "最多100个字",
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding, vertical: 5),
+                    hintText: "最多15个字",
                     hintStyle: TextStyle(fontSize: 10)),
                 onChanged: (text) {
                   chatController.updateText(text: text);

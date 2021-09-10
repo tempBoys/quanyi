@@ -16,12 +16,12 @@ class InfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: kInfoCardHeight,
-      width: 220,
+      width: 200,
       child: Stack(
         alignment: AlignmentDirectional.centerStart,
         children: [
           Container(
-            width: 200,
+            width: 180,
             child: Card(
               elevation: 1.8,
               child: Container(

@@ -82,6 +82,7 @@ class PostController extends GetxController {
     images.value = resultList;
   }
 
+  // 상품 정보를 업로드한다
   Future<void> upload({required Map<String, dynamic> productData}) async {
     await apiHelper.postProduct(productData: productData);
   }

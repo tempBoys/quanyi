@@ -1,4 +1,4 @@
-package com.example.quanyi
+package com.tempBoys.quanyi
 
 import io.flutter.embedding.android.FlutterActivity
 

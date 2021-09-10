@@ -52,7 +52,6 @@ class ApiHelper {
       for (var file in productData["images"]) {
         Uri uri = Uri.parse(file.identifier);
         File tempFile = await toFile(uri);
-        print(tempFile.path);
         request.files
             .add(await http.MultipartFile.fromPath('images', tempFile.path));
       }
@@ -60,7 +59,6 @@ class ApiHelper {
       request.headers.addAll(headers);
       await request.send();
       Get.back();
-
       Get.off(() => Scaffold(
             appBar: NormalAppbar(title: "上传成功"),
             body: Center(
@@ -68,8 +66,8 @@ class ApiHelper {
             ),
           ));
     } catch (e) {
+      Get.back();
       Get.snackbar("上传失败", "请检查一下网络状态");
-      print(e);
     }
   }
 }

@@ -9,13 +9,15 @@ class NormalAppbarWithBottom extends NormalAppbar
   final List<Widget>? actions;
   final height;
   final bottomHeight;
+  final child;
   NormalAppbarWithBottom({
     Key? key,
     this.title = '',
     this.actions,
     this.isTitleText = true,
     this.height = 60.0,
-    this.bottomHeight = 78.0,
+    this.bottomHeight = 65.0,
+    required this.child,
   }) : super(key: key) {
     NormalAppbar(
       title: title,
@@ -48,6 +50,7 @@ class NormalAppbarWithBottom extends NormalAppbar
           height: bottomHeight,
           decoration: BoxDecoration(
               color: Colors.white, border: Border(top: kBorderLine)),
+          child: child,
         ),
       ),
       shape: Border(bottom: kBorderLine),

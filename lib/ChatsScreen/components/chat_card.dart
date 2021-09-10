@@ -19,7 +19,7 @@ class ChatCard extends StatelessWidget {
             // 프로필 이미지
             CircleAvatar(
               radius: 24,
-              backgroundImage: AssetImage(chat.image),
+              // backgroundImage: AssetImage(chat.image),
             ),
             // 이름과 최근 메시지
             Expanded(

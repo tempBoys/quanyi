@@ -134,6 +134,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "pushy_flutter",
+      "rootUri": "file:///Users/ts/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/pushy_flutter-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/ts/Developer/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -212,7 +218,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-09T15:28:21.789160Z",
+  "generated": "2021-09-09T16:49:50.067697Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

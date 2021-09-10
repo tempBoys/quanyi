@@ -1,4 +1,4 @@
 io/flutter/plugins/GeneratedPluginRegistrant.java
  io.flutter.plugins.GeneratedPluginRegistrant
-com/example/quanyi/BuildConfig.java
- com.example.quanyi.BuildConfig
+com/tempBoys/quanyi/BuildConfig.java
+ com.tempBoys.quanyi.BuildConfig

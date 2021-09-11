@@ -13,8 +13,9 @@ class MessagesScreenBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ChatField(),
+          // 채팅을 입력하는 곳
           Container(
-            height: 100,
+            height: 60,
             padding: EdgeInsets.symmetric(
                 horizontal: kDefaultPadding, vertical: kDefaultPadding / 1.5),
             decoration: BoxDecoration(

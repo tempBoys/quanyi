@@ -4,13 +4,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
+import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:uri_to_file/uri_to_file.dart';
 
 class ApiHelper {
   final serverUrl = "http://d9eb-124-14-224-4.ngrok.io/";
   final String userToken =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMDQxOTM2LCJleHAiOjE2NjI1Nzc5MzZ9.QyHWPs-K83p_Y-FZLbeSwtUtyX8ofZOp-HqABcvwDz4";
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMjkwOTQxLCJleHAiOjE2NjI4MjY5NDF9.aFtlKbh43NaF41NzvOwQ_cY2Okzb3ZheeycE2QIDZ38";
 
   // 유저 정보를 불러온다
   Future<Map<String, dynamic>> getUser({required int id}) async {
@@ -35,20 +36,41 @@ class ApiHelper {
     }
   }
 
-  // 유저의 디바이스 토큰을 건네준다
-  Future<void> change({
+  // 유저의 졍보를 업데이트 한다
+  Future<void> putUser({
+    required int id,
     required String phoneNumber,
     required String password,
     required String userName,
+    required String profileImage,
     required String location,
   }) async {
-    var userData = {
+    Map<String, dynamic> userData = {
       "phone_number": phoneNumber,
       "password": password,
       "user_name": userName,
-      "profile_image": "string",
-      "location": location
+      "profile_image": profileImage,
+      "location": location,
+      "pushy_token": deviceToken,
     };
+    String jsonData = jsonEncode(userData);
+    await http.put(Uri.parse(serverUrl + "user/$id"),
+        body: jsonData, headers: {"Content-Type": "application/json"});
+  }
+
+  // 채팅을 보낸다
+  Future<void> postChat({
+    required int sender,
+    required int receriver,
+    required int productId,
+    required String message,
+  }) async {
+    await http.post(Uri.parse(serverUrl + "chat"), body: {
+      "message": message,
+      "sender": sender,
+      "receiver": receriver,
+      "product": productId,
+    });
   }
 
   // 상품을 등록한다
@@ -88,6 +110,17 @@ class ApiHelper {
       Get.back();
       Get.snackbar("上传失败", "请检查一下网络状态");
     }
+  }
+
+  // 본인의 id를 저장한다
+  Future<void> getMyId() async {
+    var userId = await http.post(Uri.parse(serverUrl + "login/user/token"),
+        headers: {'Authorization': userToken});
+    myId = jsonDecode(userId.body)["id"];
+  }
+
+  ApiHelper() {
+    getMyId();
   }
 }
 

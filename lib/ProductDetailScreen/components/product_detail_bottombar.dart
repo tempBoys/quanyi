@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/ChatsScreen/screens/messages.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_controller.dart';
 import 'package:quanyi/ProductDetailScreen/getxControllers/product_detail_scroll_controller.dart';
 import 'package:quanyi/models/constants.dart';
@@ -9,13 +10,19 @@ import 'package:quanyi/widgets/lined_box.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
 class ProductDetailScreenBottomBar extends StatelessWidget {
-  final id;
-  final price;
-  final negotiable;
-  final view;
+  final int productId;
+  final Map<String, dynamic> userData;
+  final String productName;
+  final String productImage;
+  final num price;
+  final bool negotiable;
+  final int view;
   ProductDetailScreenBottomBar(
       {Key? key,
-      required this.id,
+      required this.productId,
+      required this.userData,
+      required this.productName,
+      required this.productImage,
       required this.price,
       required this.negotiable,
       required this.view})
@@ -67,8 +74,8 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
                                 ),
                           onTap: () {
                             productController.isFav.value == false
-                                ? favStroage.add(id: id)
-                                : favStroage.delete(id: id);
+                                ? favStroage.add(id: productId)
+                                : favStroage.delete(id: productId);
                             productController.isFav.value =
                                 !productController.isFav.value;
                           },
@@ -107,8 +114,15 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
                       text: "开始聊天",
                       textScaleFactor: 1.5,
                       textColor: Colors.white,
-                      onTap: () {
+                      onTap: () async {
                         // 채팅화면으로 전환
+                        Get.to(() => MessagesScreen(), arguments: {
+                          "productID": productId,
+                          "productName": productName,
+                          "productImage": productImage,
+                          "price": price,
+                          "user": userData,
+                        });
                       },
                     ),
                   ),

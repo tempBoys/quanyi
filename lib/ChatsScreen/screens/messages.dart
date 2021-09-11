@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:quanyi/ChatsScreen/components/messages/body.dart';
+import 'package:quanyi/ChatsScreen/getxControllers/chat_controller.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/normal_appbar_with_bottom.dart';
 
 class MessagesScreen extends StatelessWidget {
-  const MessagesScreen({Key? key}) : super(key: key);
+  final messageController = Get.put(ChatController());
+  final int userId;
+  final int productId;
+  MessagesScreen({
+    Key? key,
+    this.userId = 0,
+    this.productId = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    messageController.loadData(receiverId: userId, productId: productId);
+    final user = messageController.user;
+    final product = messageController.product;
+    // final LocalStorage chatStorage =
+    //     LocalStorage('${Get.arguments["user"]["id"] ?? userId}');
+    // final user = Get.arguments["user"] ?? apiHelper.getUser(id: userId);
+    // final product = productId != 0
+    //     ? {
+    //         "name": Get.arguments["productName"],
+    //         "price": Get.arguments["price"],
+    //       }
+    //     : apiHelper.getProduct(id: productId);
     return Scaffold(
       appBar: NormalAppbarWithBottom(
         isTitleText: false,
@@ -16,7 +37,7 @@ class MessagesScreen extends StatelessWidget {
             CircleAvatar(),
             SizedBox(width: kDefaultPadding * 1.5),
             Text(
-              "판매자 이름",
+              user["user_name"],
               style: TextStyle(color: kTextColor),
             )
           ],
@@ -33,6 +54,7 @@ class MessagesScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                   color: kAccentColor,
                 ),
+                child: Image.network(Get.arguments["productImage"]),
               ),
               SizedBox(width: 8),
               Column(
@@ -40,12 +62,12 @@ class MessagesScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "상품 이름",
+                    product["name"],
                     textScaleFactor: 0.9,
                     style: TextStyle(color: kTextColor),
                   ),
                   Text(
-                    "상품 가격",
+                    product["price"],
                     style: TextStyle(
                         color: kTextColor, fontWeight: FontWeight.bold),
                   ),

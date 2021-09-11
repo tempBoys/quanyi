@@ -14,7 +14,7 @@ class MessageBallon extends StatelessWidget {
       switch (message.messageType) {
         case ChatMessageType.text:
           return TextMessage(message: message);
-        case ChatMessageType.video:
+        case ChatMessageType.image:
           return ImageMessage();
         default:
           return SizedBox();

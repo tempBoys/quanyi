@@ -37,7 +37,7 @@ class ProductList extends StatelessWidget {
               child: Container(
                 width: 270,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // 상품 이름
@@ -46,7 +46,7 @@ class ProductList extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            "상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름상품 이름",
+                            "产品名字",
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(color: kTextColor),
@@ -54,13 +54,13 @@ class ProductList extends StatelessWidget {
                         ),
                         SizedBox(width: 5),
                         Container(
-                          height: 15,
-                          width: 40,
+                          height: 18,
+                          width: 65,
                           decoration: BoxDecoration(
                               color: Colors.grey.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(6)),
                           child: Text(
-                            "판매중",
+                            "是否已售完",
                             textScaleFactor: 0.7,
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -72,14 +72,14 @@ class ProductList extends StatelessWidget {
                     SizedBox(height: 5),
                     // 유저의 주소 | 게시 날짜
                     Text(
-                      "유저의 주소 | 게시한 날짜",
+                      "地址 | 上传时间",
                       textScaleFactor: 0.9,
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(height: 5),
                     // 상품 가격 | 협상여부
                     Text(
-                      "${numFormatter.format(2020.20)} 元 | 협상 가능 여부", // 가격
+                      "${numFormatter.format(2020.20)} 元 | 可不可协商", // 가격
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: kTextColor, fontWeight: FontWeight.bold),
@@ -89,7 +89,7 @@ class ProductList extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       child: Text(
-                        "X 명이 이 상품을 클릭했어요",
+                        "已经有 X 个人看过",
                         textScaleFactor: 0.9,
                         textAlign: TextAlign.right,
                         style: TextStyle(color: kTextLightColor),
@@ -104,7 +104,7 @@ class ProductList extends StatelessWidget {
       ),
       onTap: () async {
         // 상품을 불러와 상세 스크린으로 이동한다
-        final productData = await apiHelper.getProduct(id: 24);
+        final productData = await apiHelper.getProduct(id: 1);
         Get.to(() => ProductDetailScreen(), arguments: productData);
       },
       onDoubleTap: () {},

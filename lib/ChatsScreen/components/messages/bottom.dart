@@ -13,6 +13,7 @@ class MessagesScreenBottom extends StatefulWidget {
 
 class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
   TextEditingController textController = TextEditingController();
+  final messageController = Get.put(MessageController());
   final chatController = Get.put(ChatController());
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
         GestureDetector(
           child: Icon(Icons.camera_alt_outlined, size: 25, color: kIconColor),
           onTap: () {
-            chatController.loadImages();
+            messageController.loadImages();
           },
         ),
         SizedBox(width: kDefaultPadding * 0.75),
@@ -31,11 +32,13 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
           child: Container(
               height: 45,
               width: 120,
+              color: Colors.yellow,
               child: TextFormField(
                 cursorColor: kTextColor,
                 maxLines: 1,
                 maxLength: 15,
                 controller: textController,
+                scrollPadding: EdgeInsets.zero,
                 decoration: InputDecoration(
                     suffixIcon: textController.text.length != 0
                         ? GestureDetector(
@@ -55,9 +58,6 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
                         horizontal: kDefaultPadding, vertical: 5),
                     hintText: "最多15个字",
                     hintStyle: TextStyle(fontSize: 10)),
-                onChanged: (text) {
-                  chatController.updateText(text: text);
-                },
               )),
         ),
         SizedBox(width: kDefaultPadding * 0.75),
@@ -68,9 +68,17 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
             color: kIconColor,
           ),
           onTap: () {
-            print(chatController.text);
-            print(textController.text);
-            Get.defaultDialog(title: "", middleText: chatController.text);
+            try {
+              messageController.sendMessage(
+                  sender: myId,
+                  receriver: chatController.user["id"],
+                  productId: chatController.product["id"],
+                  message: textController.text);
+              chatController.storeChat(message: textController.text);
+              textController.clear();
+            } catch (e) {
+              Get.snackbar("传送失败", "请检查一下网络状态");
+            }
           },
         )
       ],

@@ -7,20 +7,26 @@ import 'package:quanyi/SearchScreen/screens/search_result.dart';
 class SearchScreen extends StatelessWidget {
   SearchScreen({Key? key}) : super(key: key);
   final controller = Get.put(SearchHistoryController());
+  final TextEditingController _controller = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black54,
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(
             Icons.arrow_back_ios_new_outlined,
+            color: Colors.black54,
             size: 20,
           ),
         ),
         title: TextField(
+          controller: _controller,
           textInputAction: TextInputAction.search,
+          autofocus: true,
           onSubmitted: (value) {
             controller.searchText = value.obs;
             Get.off(() => SearchResult(searchText: value));
@@ -34,10 +40,11 @@ class SearchScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => _controller.clear(),
             icon: Icon(
-              Icons.highlight_remove_outlined,
+              Icons.clear_outlined,
               size: 20,
+              color: Colors.black54,
             ),
           ),
         ],
@@ -61,7 +68,9 @@ class SearchScreen extends StatelessWidget {
                     crossAxisCount: 4),
                 itemCount: controller.historyList.length,
                 itemBuilder: (_, index) {
-                  return HistoryButton(title: controller.historyList[index]);
+                  return HistoryButton(
+                      title: controller.historyList[
+                          controller.historyList.length - 1 - index]);
                 },
               ),
             )

@@ -8,6 +8,7 @@ MERGED from /Users/ts/Desktop/quanyi/android/app/src/main/AndroidManifest.xml:1:
 MERGED from [:pushy_flutter] /Users/ts/Desktop/quanyi/build/pushy_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] /Users/ts/Desktop/quanyi/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] /Users/ts/Desktop/quanyi/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_secure_storage] /Users/ts/Desktop/quanyi/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:multi_image_picker2] /Users/ts/Desktop/quanyi/build/multi_image_picker2/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:uri_to_file] /Users/ts/Desktop/quanyi/build/uri_to_file/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/ts/.gradle/caches/transforms-2/files-2.1/e0fd5e1ca6d8af2526223d2abecd725b/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
@@ -211,6 +212,8 @@ MERGED from [:shared_preferences] /Users/ts/Desktop/quanyi/build/shared_preferen
 MERGED from [:shared_preferences] /Users/ts/Desktop/quanyi/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/ts/Desktop/quanyi/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/ts/Desktop/quanyi/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_secure_storage] /Users/ts/Desktop/quanyi/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_secure_storage] /Users/ts/Desktop/quanyi/build/flutter_secure_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:multi_image_picker2] /Users/ts/Desktop/quanyi/build/multi_image_picker2/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:multi_image_picker2] /Users/ts/Desktop/quanyi/build/multi_image_picker2/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:uri_to_file] /Users/ts/Desktop/quanyi/build/uri_to_file/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44

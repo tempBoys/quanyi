@@ -42,5 +42,13 @@ BorderSide kBorderLine = BorderSide(color: Color(0xFFF2F2F2), width: 1);
 // 상품 업로드 관련
 enum Upload { name, content, price }
 
+enum Authentication { SignUp, ResetPassword }
+
+final RegExp onlyDigits = RegExp("[0-9]+");
+
+final RegExp legalChinesePhoneNum = RegExp(
+    '^((13[0-9])|(15[^4])|(166)|(17[0-8])|(18[0-9])|(19[8-9])|(147,145))\\d{8}\$');
+
+const String kServerAddress = "http://c7f0-120-245-52-103.ngrok.io/api";
 String deviceToken = "";
 int myId = -1;

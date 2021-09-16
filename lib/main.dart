@@ -71,9 +71,9 @@ class _QuanYiState extends State<QuanYi> {
       },
       theme: ThemeData(
           fontFamily: "NotoSansSC", backgroundColor: kBackGroundColor),
-      initialRoute: AppRoutes.DASHBOARD,
+      initialRoute: "${AppRoutes.DASHBOARD}SignInLoading",
       getPages: AppScreens.list,
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

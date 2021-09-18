@@ -1,7 +1,6 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
-import 'package:quanyi/models/utils/server_address.dart';
+import 'package:quanyi/models/constants.dart';
 
 List<int> favorites = [11, 12, 13];
 List<int> purchased = [11, 12, 13];

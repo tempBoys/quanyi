@@ -18,7 +18,7 @@ class SalesHistoryScreen extends StatefulWidget {
 class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
   Future<List<Map<String, dynamic>>> getList() async {
     http.Response response =
-        await http.get(Uri.parse("${kServerAddress}product/$userID/sell/0"));
+        await http.get(Uri.parse("${kServerAddress}product/$myId/sell/0"));
     if (response.statusCode == 200) {
       if (response.body == "[]") {
         return [];

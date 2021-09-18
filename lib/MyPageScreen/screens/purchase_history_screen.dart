@@ -17,7 +17,7 @@ class PurchaseHistoryScreen extends StatefulWidget {
 class _PurchaseHistoryScreenState extends State<PurchaseHistoryScreen> {
   Future<List<Map<String, dynamic>>> getList() async {
     http.Response response =
-        await http.get(Uri.parse("${kServerAddress}product/$userID/bought/0"));
+        await http.get(Uri.parse("${kServerAddress}product/$myId/bought/0"));
     if (response.statusCode == 200) {
       if (response.body == "[]") {
         return [];

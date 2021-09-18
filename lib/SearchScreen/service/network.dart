@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:quanyi/SearchScreen/models/search_products.dart';
 
-const String server = 'http://d9eb-124-14-224-4.ngrok.io/product/search/';
+const String server = 'https://7534-124-14-224-4.ngrok.io/product/search/';
 
 class SearchApi {
   static var client = http.Client();

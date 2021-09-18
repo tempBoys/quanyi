@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/SearchScreen/screens/search_screen.dart';
 import 'package:quanyi/UploadScreen/upload.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/api_helper.dart';
@@ -70,7 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: NormalAppbar(
         title: "主页",
         actions: [
-          IconButton(icon: Icon(CupertinoIcons.search), onPressed: () {}),
+          IconButton(
+            icon: Icon(CupertinoIcons.search),
+            onPressed: () => Get.to(() => SearchScreen()),
+          ),
           IconButton(icon: Icon(CupertinoIcons.bell), onPressed: () {})
         ],
       ),

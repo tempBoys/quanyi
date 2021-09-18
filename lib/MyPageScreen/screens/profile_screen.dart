@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/MyPageScreen/screens/my_page_main_screen.dart';
+import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/widgets/normal_button.dart';
@@ -20,6 +21,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   String address = "${Get.arguments["address"]}";
   String tempAddress = "${Get.arguments["address"]}";
+
+  String phoneNum = "${Get.arguments["phoneNum"]}";
+  String tempPhoneNum = "${Get.arguments["phoneNum"]}";
 
   Future<bool?> showWarning(BuildContext context) async {
     return showDialog(
@@ -54,7 +58,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        if (tempUserName != userName) {
+        if (tempUserName != userName ||
+            tempAddress != address ||
+            tempPhoneNum != phoneNum) {
           final shouldPop = await showWarning(context);
           return shouldPop ?? false;
         } else {
@@ -73,10 +79,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 40.w,
-                  backgroundImage: NetworkImage(
-                      "http://cdn.cnn.com/cnnnext/dam/assets/191201230412-01-mohe-china-super-tease.jpg"),
+                GestureDetector(
+                  onTap: () {},
+                  child: CircleAvatar(
+                    radius: 40.w,
+                    backgroundImage: NetworkImage(
+                        "http://cdn.cnn.com/cnnnext/dam/assets/191201230412-01-mohe-china-super-tease.jpg"),
+                  ),
                 ),
                 TextFormField(
                   initialValue: "${Get.arguments["name"]}",
@@ -126,6 +135,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 SizedBox(
+                  height: 5.h,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  initialValue: "${Get.arguments["phoneNum"]}",
+                  onSaved: (newValue) => tempPhoneNum = newValue!,
+                  onChanged: (value) {
+                    setState(() {
+                      tempPhoneNum = value;
+                    });
+                  },
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "电话号码不能为空";
+                    } else if (!legalChinesePhoneNum.hasMatch(value)) {
+                      return "请输入正确的电话号码";
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    labelText: "请输入电话号码",
+                    hintStyle:
+                        TextStyle(height: 2, fontWeight: FontWeight.bold),
+                    hintText: "",
+                  ),
+                ),
+                SizedBox(
                   height: 40.h,
                 ),
                 BottomBarButton(
@@ -133,6 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     if (_formKey.currentState!.validate()) {
                       MyPageMainScreen.userName = tempUserName;
                       MyPageMainScreen.address = tempAddress;
+                      MyPageMainScreen.phoneNum = tempPhoneNum;
                       Get.back();
                     }
                   },

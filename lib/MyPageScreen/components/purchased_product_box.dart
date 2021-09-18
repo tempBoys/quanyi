@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quanyi/MyPageScreen/getXControllers/all_selected_controller.dart';
+import 'package:quanyi/MyPageScreen/getXControllers/product_box_controller.dart';
+import 'package:quanyi/MyPageScreen/models/product_data.dart';
 import 'package:quanyi/ProductDetailScreen/product_detail.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 
-class PurchasedProduct extends StatelessWidget {
-  final int id;
-  bool completed = false;
-  PurchasedProduct({Key? key, required this.id}) : super(key: key);
+class PurchasedProductBox extends StatefulWidget {
+  final Map<String, dynamic> info;
+  PurchasedProductBox({Key? key, required this.info}) : super(key: key);
 
   @override
+  _PurchasedProductBoxState createState() => _PurchasedProductBoxState();
+}
+
+class _PurchasedProductBoxState extends State<PurchasedProductBox> {
+  @override
   Widget build(BuildContext context) {
-    completed = (id / 2 == 0);
     return GestureDetector(
       child: Container(
         height: 100,
@@ -78,7 +84,7 @@ class PurchasedProduct extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    completed ? "交易完成" : "交易中",
+                    (widget.info["status"] == "complete") ? "交易完成" : "交易中",
                     style: TextStyle(
                       color: Colors.white,
                     ),

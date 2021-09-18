@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/HomeScreen/components/custom_list_tile.dart';
+import 'package:quanyi/ReviewScreen/screens/choose_buyer_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/favorites_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/profile_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/purchase_history_screen.dart';
@@ -16,6 +17,7 @@ class MyPageMainScreen extends StatelessWidget {
 
   static String userName = "User Name";
   static String address = "北京市海淀区燕园街道";
+  static String phoneNum = "13512345678";
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +56,11 @@ class MyPageMainScreen extends StatelessWidget {
               textScaleFactor: 1.5.h,
               height: 50.h,
               onTap: () {
-                Get.to(() => ProfileScreen(),
-                    arguments: {"name": userName, "address": address});
+                Get.to(() => ProfileScreen(), arguments: {
+                  "name": userName,
+                  "address": address,
+                  "phoneNum": phoneNum
+                });
               },
             ),
             SizedBox(

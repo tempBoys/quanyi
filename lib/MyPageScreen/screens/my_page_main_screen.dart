@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quanyi/HomeScreen/components/custom_list_tile.dart';
-import 'package:quanyi/ReviewScreen/screens/choose_buyer_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/favorites_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/profile_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/purchase_history_screen.dart';
@@ -10,7 +8,6 @@ import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/MyPageScreen/components/custom_bottom.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:quanyi/widgets/normal_button.dart';
-import 'package:quanyi/widgets/kdivider.dart';
 
 class MyPageMainScreen extends StatelessWidget {
   MyPageMainScreen({Key? key}) : super(key: key);

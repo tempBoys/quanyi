@@ -41,6 +41,7 @@ BorderSide kBorderLine = BorderSide(color: Color(0xFFF2F2F2), width: 1);
 
 // 상품 업로드 관련
 enum Upload { name, content, price }
+enum ProductsListType { favorites, purchased, sold }
 
 enum Authentication { SignUp, ResetPassword }
 

@@ -5,8 +5,6 @@ import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:quanyi/MyPageScreen/getXControllers/all_selected_controller.dart';
-import 'package:quanyi/models/utils/server_address.dart';
 import 'package:quanyi/MyPageScreen/models/product_data.dart';
 import 'package:quanyi/MyPageScreen/getXControllers/product_box_controller.dart';
 

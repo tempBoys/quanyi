@@ -37,7 +37,7 @@ class ProductDetailScreenAppBar extends StatelessWidget {
             centerTitle: true,
             background: Swiper(
               loop: false,
-              itemCount: 3,
+              itemCount: images.length,
               itemBuilder: (BuildContext context, int index) {
                 if (images.length != 0) {
                   return GestureDetector(

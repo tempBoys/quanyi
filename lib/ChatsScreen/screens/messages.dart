@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:quanyi/ChatsScreen/components/messages/body.dart';
 import 'package:quanyi/ChatsScreen/getxControllers/chat_controller.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/models/utils/number_formatter.dart';
 import 'package:quanyi/widgets/normal_appbar_with_bottom.dart';
 
 class MessagesScreen extends StatelessWidget {
@@ -17,7 +18,9 @@ class MessagesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    messageController.loadData(receiverId: userId, productId: productId);
+    messageController.loadData(
+        receiverId: Get.arguments["user"]["id"],
+        productId: Get.arguments["productID"]);
     final user = messageController.user;
     final product = messageController.product;
     // final LocalStorage chatStorage =
@@ -29,6 +32,7 @@ class MessagesScreen extends StatelessWidget {
     //         "price": Get.arguments["price"],
     //       }
     //     : apiHelper.getProduct(id: productId);
+
     return Scaffold(
       appBar: NormalAppbarWithBottom(
         isTitleText: false,
@@ -37,7 +41,7 @@ class MessagesScreen extends StatelessWidget {
             CircleAvatar(),
             SizedBox(width: kDefaultPadding * 1.5),
             Text(
-              user["user_name"],
+              Get.arguments["user"]["user_name"],
               style: TextStyle(color: kTextColor),
             )
           ],
@@ -62,12 +66,12 @@ class MessagesScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product["name"],
+                    Get.arguments["productName"],
                     textScaleFactor: 0.9,
                     style: TextStyle(color: kTextColor),
                   ),
                   Text(
-                    product["price"],
+                    "${numFormatter.format(Get.arguments["price"])} 元",
                     style: TextStyle(
                         color: kTextColor, fontWeight: FontWeight.bold),
                   ),

@@ -6,11 +6,16 @@ import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 
 class ProductList extends StatelessWidget {
-  final int id;
-  ProductList({Key? key, required this.id}) : super(key: key);
+  final Map simpleData;
+  ProductList({
+    Key? key,
+    required this.simpleData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    String nego = simpleData["negotiable"] == false ? "不可协商" : "可协商";
+    String status = simpleData["status"] == "sell" ? "出售中" : "出售完";
     return GestureDetector(
       child: Container(
         height: 120,
@@ -46,7 +51,7 @@ class ProductList extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            "产品名字",
+                            simpleData["name"],
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(color: kTextColor),
@@ -60,7 +65,7 @@ class ProductList extends StatelessWidget {
                               color: Colors.grey.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(6)),
                           child: Text(
-                            "是否已售完",
+                            status,
                             textScaleFactor: 0.7,
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -72,14 +77,14 @@ class ProductList extends StatelessWidget {
                     SizedBox(height: 5),
                     // 유저의 주소 | 게시 날짜
                     Text(
-                      "地址 | 上传时间",
+                      "地址 | ${simpleData["created_at"]}",
                       textScaleFactor: 0.9,
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(height: 5),
                     // 상품 가격 | 협상여부
                     Text(
-                      "${numFormatter.format(2020.20)} 元 | 可不可协商", // 가격
+                      "${numFormatter.format(simpleData["price"])} 元 | $nego",
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: kTextColor, fontWeight: FontWeight.bold),
@@ -89,7 +94,7 @@ class ProductList extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       child: Text(
-                        "已经有 X 个人看过",
+                        "已经有 ${simpleData["view"]} 个人看过",
                         textScaleFactor: 0.9,
                         textAlign: TextAlign.right,
                         style: TextStyle(color: kTextLightColor),
@@ -104,7 +109,7 @@ class ProductList extends StatelessWidget {
       ),
       onTap: () async {
         // 상품을 불러와 상세 스크린으로 이동한다
-        final productData = await apiHelper.getProduct(id: 1);
+        final productData = await apiHelper.getProduct(id: simpleData["id"]);
         Get.to(() => ProductDetailScreen(), arguments: productData);
       },
       onDoubleTap: () {},

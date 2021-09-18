@@ -1,13 +1,10 @@
-import 'dart:async';
 import 'package:quanyi/LoginScreen/screens/sign_up_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:quanyi/LoginScreen/components/default_button.dart';
 import 'package:quanyi/LoginScreen/components/sign_up_text_input_card.dart';
 import 'package:quanyi/LoginScreen/models/send_sign_up_data.dart';
 import 'package:quanyi/LoginScreen/models/texts.dart';
-
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/size_config.dart';
 import 'package:flutter/services.dart';

@@ -3,6 +3,7 @@ import 'package:quanyi/models/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:quanyi/LoginScreen/models/texts.dart';
 import 'package:quanyi/LoginScreen/components/sign_up_form.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String phoneNum = '';
@@ -12,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('페이지를 나가시겠습니까?\n변경 사항은 저장되지 않습니다'),
+        title: Text('是否退出？\n您所写的内容会消失！'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
@@ -26,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
           TextButton(
             onPressed: () => Navigator.pop(context, true),
             child: Text(
-              '나가기',
+              '退出',
               style: TextStyle(
                 color: Colors.blue,
               ),
@@ -51,33 +52,28 @@ class SignUpScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0.0,
-          title: Text(
-            kSignUp,
-            style: TextStyle(
-              color: kTextColor,
-            ),
-          ),
-          backgroundColor: kAppBarColor,
-        ),
-        body: SafeArea(
-          child: SizedBox(
-            width: double.infinity,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(height: SizeConfig.screenHeight * 0.04),
-                    SignUpForm(),
-                    SizedBox(height: SizeConfig.screenHeight * 0.04),
-                  ],
+        appBar: NormalAppbar(title: kSignUp),
+        body: GestureDetector(
+          child: SafeArea(
+            child: SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(height: SizeConfig.screenHeight * 0.04),
+                      SignUpForm(),
+                      SizedBox(height: SizeConfig.screenHeight * 0.04),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
         ),
       ),
     );

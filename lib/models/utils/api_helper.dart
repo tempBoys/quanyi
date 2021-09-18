@@ -5,18 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/router/app_page.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:uri_to_file/uri_to_file.dart';
 
 class ApiHelper {
-  final serverUrl = "http://d9eb-124-14-224-4.ngrok.io/";
+  final serverUrl = kServerAddress;
   final String userToken =
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMjkwOTQxLCJleHAiOjE2NjI4MjY5NDF9.aFtlKbh43NaF41NzvOwQ_cY2Okzb3ZheeycE2QIDZ38";
 
   // 유저 정보를 불러온다
   Future<Map<String, dynamic>> getUser({required int id}) async {
+    print(id);
     http.Response response = await http.get(Uri.parse(serverUrl + "user/$id"));
-
+    print(response.body);
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
@@ -65,12 +67,17 @@ class ApiHelper {
     required int productId,
     required String message,
   }) async {
-    await http.post(Uri.parse(serverUrl + "chat"), body: {
-      "message": message,
-      "sender": sender,
-      "receiver": receriver,
-      "product": productId,
+    print("object");
+    var tempChatData = jsonEncode({
+      "type": "message",
+      "data": {
+        "message": message,
+        "sender": sender,
+        "receiver": receriver,
+        "product": productId,
+      }
     });
+    await http.post(Uri.parse(serverUrl + "chat"), body: tempChatData);
   }
 
   // 상품을 등록한다
@@ -113,14 +120,48 @@ class ApiHelper {
   }
 
   // 본인의 id를 저장한다
-  Future<void> getMyId() async {
-    var userId = await http.post(Uri.parse(serverUrl + "login/user/token"),
-        headers: {'Authorization': userToken});
-    myId = jsonDecode(userId.body)["id"];
+  // Future<void> getMyId() async {
+  //   var userId = await http.post(Uri.parse(serverUrl + "login/user/token"),
+  //       headers: {'Authorization': userToken});
+  //   myId = jsonDecode(userId.body)["id"];
+  // }
+
+  // ApiHelper() {
+  //   getMyId();
+  // }
+
+  // 로그인
+  Future<void> login({required token}) async {
+    if (token != null) {
+      const String tokenLoginUrl = "${kServerAddress}login/user/token";
+      final _res = await http.post(
+        Uri.parse(tokenLoginUrl),
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token"
+        },
+      );
+
+      if (_res.statusCode == 201) {
+        Get.offAllNamed(AppRoutes.DASHBOARD);
+      } else {
+        Get.offAllNamed("${AppRoutes.DASHBOARD}SignIn");
+      }
+    } else {
+      Get.offAllNamed("${AppRoutes.DASHBOARD}SignIn");
+    }
   }
 
-  ApiHelper() {
-    getMyId();
+  // 최근에 올라온 제품을 10씩 불러온다
+  Future<dynamic> getRecentProducts({required lastProductId}) async {
+    http.Response response =
+        await http.get(Uri.parse(serverUrl + "product/recent/$lastProductId"));
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception("Error during getting product!");
+    }
   }
 }
 

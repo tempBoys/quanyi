@@ -32,7 +32,6 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
           child: Container(
               height: 45,
               width: 120,
-              color: Colors.yellow,
               child: TextFormField(
                 cursorColor: kTextColor,
                 maxLines: 1,

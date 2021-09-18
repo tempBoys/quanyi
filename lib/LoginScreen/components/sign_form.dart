@@ -6,7 +6,6 @@ import 'package:quanyi/LoginScreen/models/send_login_data.dart';
 import 'package:quanyi/LoginScreen/models/texts.dart';
 import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/models/constants.dart';
-import 'package:get/get.dart';
 
 class SignForm extends StatefulWidget {
   @override
@@ -103,6 +102,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPhoneNumFormField() {
     return TextFormField(
+      cursorColor: kTextColor,
       keyboardType: TextInputType.number,
       onSaved: (newValue) => phoneNum = newValue!,
       onChanged: (value) {
@@ -124,6 +124,7 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
+        focusColor: kTextColor,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
         labelText: kPhoneNum,

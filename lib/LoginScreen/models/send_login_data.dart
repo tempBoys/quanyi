@@ -33,17 +33,16 @@ void sendLoginData(
     barrierDismissible: false,
   );
   try {
-    final _res = await http
-        .post(
-          Uri.parse("${kServerAddress}login/user/local"),
-          headers: {"Content-Type": "application/json"},
-          body: jsonEncode(<String, String>{
-            "phone_number": phoneNum,
-            "password": password,
-          }),
-        )
-        .timeout(const Duration(seconds: 5));
-    print(_res.body);
+    final _res = await http.post(
+      Uri.parse("${kServerAddress}login/user/local"),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonEncode(<String, String>{
+        "phone_number": phoneNum,
+        "password": password,
+      }),
+    );
     if (_res.statusCode == 201) {
       final _token = _res.body;
       SignInLoadingScreen.storage.write(key: 'token', value: _token);

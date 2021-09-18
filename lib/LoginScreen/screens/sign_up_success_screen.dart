@@ -3,25 +3,15 @@ import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quanyi/LoginScreen/components/default_button.dart';
 import 'package:quanyi/LoginScreen/models/texts.dart';
-import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/models/size_config.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 
 class SignUpSuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0.0,
-        leading: SizedBox(),
-        title: Text(
-          kSignUpComplete,
-          style: TextStyle(
-            color: kTextColor,
-          ),
-        ),
-        backgroundColor: kAppBarColor,
-      ),
+      appBar: NormalAppbar(title: kSignUpComplete),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +27,7 @@ class SignUpSuccessScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: getProportionateScreenWidth(30),
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: kTextColor,
               ),
             ),
             SizedBox(height: SizeConfig.screenHeight * 0.08),

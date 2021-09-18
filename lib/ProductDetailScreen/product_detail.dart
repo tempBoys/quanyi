@@ -23,9 +23,7 @@ class ProductDetailScreen extends StatelessWidget {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return [
               // 상품 이미지와 애니메이션 효과가 있는 앱바 (스크롤하면서 서서히 생긴다)
-              ProductDetailScreenAppBar(
-                images: productData["images"],
-              ),
+              ProductDetailScreenAppBar(images: productData["images"]),
             ];
           },
           body: SingleChildScrollView(
@@ -47,7 +45,7 @@ class ProductDetailScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(15, 15, 15, 21.5),
                   child: UserInfo(
-                    userName: productData["user"]["user_name"],
+                    userName: productData["seller"]["user_name"],
                   ),
                 ),
 
@@ -62,7 +60,7 @@ class ProductDetailScreen extends StatelessWidget {
           productId: productData["id"],
           productName: productData["name"],
           productImage: productData["images"][0]["image"] ?? "",
-          userData: productData["user"],
+          userData: productData["seller"],
           price: productData["price"],
           negotiable: productData["negotiable"],
           view: productData["view"],

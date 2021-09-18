@@ -23,6 +23,7 @@ class MessageController extends GetxController {
     required String message,
   }) async {
     try {
+      print(message);
       await apiHelper.postChat(
           sender: sender,
           receriver: receriver,
@@ -60,7 +61,7 @@ class ChatController extends GetxController {
   // 채팅 내용
   RxList<ChatMessage> storedChat = <ChatMessage>[].obs;
 
-  void loadData({
+  Future<void> loadData({
     required int receiverId,
     required int productId,
   }) async {
@@ -72,20 +73,12 @@ class ChatController extends GetxController {
   // 보낸 텍스트를 저장한다
   void storeChat({required message}) {
     storedChat =
-        chatStorage.getItem("user${user["id"]}product${product["id"]}");
+        chatStorage.getItem("user${user["id"]}product${product["id"]}") ?? [];
     storedChat.add(ChatMessage(
       text: message,
       messageType: ChatMessageType.text,
       isSender: true,
     ));
     chatStorage.setItem("user${user["id"]}product${product["id"]}", storedChat);
-  }
-
-  @override
-  void onInit() {
-    // 기존에 저장된 채팅 내용을 불러온다
-    storedChat =
-        chatStorage.getItem("user${user["id"]}product${product["id"]}") ?? [];
-    super.onInit();
   }
 }

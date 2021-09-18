@@ -40,6 +40,7 @@ void sendSignUpData(BuildContext context) async {
             "phone_number": SignUpScreen.phoneNum,
             "password": SignUpScreen.password,
             "user_name": SignUpScreen.name,
+            "location": SignUpScreen.address,
           }),
         )
         .timeout(const Duration(seconds: 5));

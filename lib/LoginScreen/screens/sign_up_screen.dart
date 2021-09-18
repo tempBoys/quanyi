@@ -9,6 +9,7 @@ class SignUpScreen extends StatelessWidget {
   static String phoneNum = '';
   static String password = '';
   static String name = '';
+  static String address = '';
   Future<bool?> showWarning(BuildContext context) async {
     return showDialog(
       context: context,
@@ -44,7 +45,8 @@ class SignUpScreen extends StatelessWidget {
       onWillPop: () async {
         if (SignUpScreen.phoneNum != '' ||
             SignUpScreen.password != '' ||
-            SignUpScreen.name != '') {
+            SignUpScreen.name != '' ||
+            SignUpScreen.address != '') {
           final shouldPop = await showWarning(context);
           return shouldPop ?? false;
         } else {

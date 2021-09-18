@@ -26,6 +26,7 @@ class _SignUpFormState extends State<SignUpForm> {
   bool firstVisitforPW = true;
   bool firstCreatePassword = true;
   bool firstVisitforName = true;
+  bool firstVisitforAddress = true;
 
   @override
   void initState() {
@@ -33,6 +34,7 @@ class _SignUpFormState extends State<SignUpForm> {
     SignUpScreen.phoneNum = '';
     SignUpScreen.password = '';
     SignUpScreen.name = '';
+    SignUpScreen.address = '';
   }
 
   @override
@@ -136,6 +138,28 @@ class _SignUpFormState extends State<SignUpForm> {
             hintText: kInputName,
           ),
           SizedBox(height: 30.h),
+          TextInputWithoutBorder(
+            obscureText: false,
+            onSaved: (newValue) => SignUpScreen.address = newValue!,
+            onChanged: (value) {
+              if (firstVisitforAddress == true) {
+                firstVisitforAddress = false;
+              }
+              setState(() {
+                SignUpScreen.address = value;
+              });
+            },
+            validator: (value) {
+              if (firstVisitforAddress) {
+                return null;
+              } else if (value!.isEmpty) {
+                return kRequestInputAddress;
+              }
+              return null;
+            },
+            hintText: kInputAddress,
+          ),
+          SizedBox(height: 30.h),
           SizedBox(height: getProportionateScreenHeight(10)),
           DefaultButton(
             text: kSignUp,
@@ -144,7 +168,8 @@ class _SignUpFormState extends State<SignUpForm> {
                   !firstVisitforPhoneNum &&
                   !firstVisitforPW &&
                   !firstCreatePassword &&
-                  !firstVisitforName) {
+                  !firstVisitforName &&
+                  !firstVisitforAddress) {
                 _formKey.currentState!.save();
                 sendSignUpData(context);
               }
@@ -153,6 +178,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 firstVisitforPW = false;
                 firstCreatePassword = false;
                 firstVisitforName = false;
+                firstVisitforAddress = false;
               });
             },
             backgroundColor: (_formKey.currentState == null)
@@ -161,7 +187,8 @@ class _SignUpFormState extends State<SignUpForm> {
                         !firstVisitforPhoneNum &&
                         !firstVisitforPW &&
                         !firstCreatePassword &&
-                        !firstVisitforName)
+                        !firstVisitforName &&
+                        !firstVisitforAddress)
                     ? Colors.black
                     : Color(0xFFCCCCCC)),
             textColor: (_formKey.currentState == null)
@@ -170,7 +197,8 @@ class _SignUpFormState extends State<SignUpForm> {
                         !firstVisitforPhoneNum &&
                         !firstVisitforPW &&
                         !firstCreatePassword &&
-                        !firstVisitforName)
+                        !firstVisitforName &&
+                        !firstVisitforAddress)
                     ? Colors.white
                     : Color(0xFF9E9E9E)),
           ),

@@ -1,14 +1,13 @@
 import 'package:http/http.dart' as http;
 import 'package:quanyi/SearchScreen/models/search_products.dart';
-
-const String server = 'https://7534-124-14-224-4.ngrok.io/product/search/';
+import 'package:quanyi/models/constants.dart';
 
 class SearchApi {
   static var client = http.Client();
 
   static Future<List<SearchProduct>> fetchProducts(
       {String searchText = '', int lastID = 0}) async {
-    String url = server + searchText + '/$lastID';
+    String url = kServerAddress + "product/search/" + searchText + '/$lastID';
     var response = await client.get(Uri.parse(url));
     if (response.statusCode == 200) {
       var jsonString = response.body;

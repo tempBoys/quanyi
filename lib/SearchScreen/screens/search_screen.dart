@@ -3,26 +3,19 @@ import 'package:get/get.dart';
 import 'package:quanyi/SearchScreen/components/history_button.dart';
 import 'package:quanyi/SearchScreen/controllers/search_history_controller.dart';
 import 'package:quanyi/SearchScreen/screens/search_result.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({Key? key}) : super(key: key);
   final controller = Get.put(SearchHistoryController());
   final TextEditingController _controller = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black54,
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: Colors.black54,
-            size: 20,
-          ),
-        ),
+      appBar: NormalAppbar(
+        isTitleText: false,
         title: TextField(
           controller: _controller,
           textInputAction: TextInputAction.search,
@@ -34,7 +27,7 @@ class SearchScreen extends StatelessWidget {
           decoration: InputDecoration(
             border: InputBorder.none,
             prefixIcon: Icon(Icons.search),
-            hintText: 'Search ',
+            hintText: '搜索您所需要的商品',
             contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           ),
         ),
@@ -55,7 +48,7 @@ class SearchScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
               child: Text(
-                '최근 검색어',
+                '最近搜索词',
                 style: TextStyle(
                   fontSize: 14,
                 ),

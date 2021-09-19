@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:localstorage/localstorage.dart';
-import 'package:quanyi/SearchScreen/models/search_products.dart';
 
 class SearchHistoryController extends GetxController {
   final LocalStorage storage = new LocalStorage('search_history');
@@ -8,28 +7,26 @@ class SearchHistoryController extends GetxController {
   RxString searchText = ''.obs;
   @override
   void onInit() {
-    // TODO: implement onInit
     getHistory();
-    print(historyList);
     super.onInit();
   }
 
   @override
   void onClose() {
-    // TODO: implement onClose
-    print('close');
     updateHistory();
     super.onClose();
   }
 
   void updateHistory() {
     if (historyList.contains(searchText.value)) {
+      // 이미 기록이 있을 경우
       historyList.remove(searchText.value);
       historyList.add(searchText.value);
-    } else if (searchText.value != '') historyList.add(searchText.value);
-
+    } else if (searchText.value != '') {
+      // 기록이 없을 경우
+      historyList.add(searchText.value);
+    }
     storage.setItem('history', historyList);
-    print(historyList);
   }
 
   void getHistory() {

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/product_detail.dart';
@@ -16,6 +18,9 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     String nego = simpleData["negotiable"] == false ? "不可协商" : "可协商";
     String status = simpleData["status"] == "sell" ? "出售中" : "出售完";
+    String image = !simpleData["images"].isNotEmpty
+        ? "https://img2.baidu.com/it/u=3730331835,786410035&fm=26&fmt=auto"
+        : simpleData["images"][0]["image"];
     return GestureDetector(
       child: Container(
         height: 120,
@@ -32,7 +37,10 @@ class ProductList extends StatelessWidget {
                 width: 75,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
-                  color: kAccentColor,
+                ),
+                child: Image.network(
+                  image,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),

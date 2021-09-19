@@ -13,12 +13,12 @@ class SearchProduct {
     this.price = 0,
     this.content = noData,
     this.status = '',
-    this.reviewed = false,
+    // this.reviewed = false,
     this.negotiable = false,
     this.view = 0,
     required this.createdAt,
     this.images = const [],
-    this.user,
+    required this.user,
   });
 
   final int id;
@@ -26,12 +26,12 @@ class SearchProduct {
   final int price;
   final String content;
   final String status;
-  final bool reviewed;
+  // final bool reviewed;
   final bool negotiable;
   final int view;
   final DateTime createdAt;
   final List<dynamic> images;
-  final User? user;
+  final User user;
 
   factory SearchProduct.fromJson(Map<String, dynamic> json) => SearchProduct(
         id: json["id"],
@@ -39,12 +39,12 @@ class SearchProduct {
         price: json["price"],
         content: json["content"],
         status: json["status"],
-        reviewed: json["reviewd"],
+        // reviewed: json["reviewd"],
         negotiable: json["negotiable"],
         view: json["view"],
         createdAt: DateTime.parse(json["created_at"]),
         images: List<dynamic>.from(json["images"].map((x) => x)),
-        user: json["user"] == null ? null : User.fromJson(json["user"]),
+        user: User.fromJson(json["seller"]),
       );
 }
 

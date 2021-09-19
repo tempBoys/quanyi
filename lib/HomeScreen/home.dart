@@ -57,8 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var tempData =
         await apiHelper.getRecentProducts(lastProductId: lastProductId);
     productData.addAll(tempData);
-    print(productData);
-
+    lastProductId = tempData.last["id"];
     setState(() {
       isLoading = false;
     });

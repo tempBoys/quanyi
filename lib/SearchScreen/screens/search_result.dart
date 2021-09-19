@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
 import 'package:quanyi/ProductDetailScreen/product_detail.dart';
 import 'package:quanyi/SearchScreen/controllers/search_controller.dart';
-import 'package:quanyi/SearchScreen/models/search_products.dart';
 import 'package:quanyi/models/constants.dart';
+import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/models/utils/number_formatter.dart';
 import 'package:quanyi/widgets/kdivider.dart';
+import 'package:quanyi/widgets/normal_appbar.dart';
 
 class SearchResult extends StatelessWidget {
   SearchResult({Key? key, required this.searchText}) : super(key: key);
@@ -16,25 +16,21 @@ class SearchResult extends StatelessWidget {
   Widget build(BuildContext context) {
     controller.fetchSearchProducts(this.searchText);
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () => Get.back(),
-            icon: Icon(
-              Icons.arrow_back_ios_new,
-              size: 20,
-            ),
-          ),
+        appBar: NormalAppbar(
+          isTitleText: false,
+          centerTitle: false,
           title: Text(
             controller.searchText.value,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
           ),
         ),
+        backgroundColor: kBackGroundColor,
         body: Obx(
           () => controller.isLoading.value == false
               ? ListView.separated(
                   itemBuilder: (BuildContext ctx, int index) {
                     return Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+                        padding: const EdgeInsets.fromLTRB(15, 20, 15, 20),
                         child: searchView(index));
                   },
                   separatorBuilder: (BuildContext ctx, int index) {
@@ -47,34 +43,28 @@ class SearchResult extends StatelessWidget {
 
   Widget searchView(int index) => GestureDetector(
         child: Container(
-          height: 100,
+          height: 120,
           color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(
                 flex: 2,
                 // 해당 상품 이미지
-                child: controller.searchProducts[index].images.isNotEmpty
-                    ? ClipRRect(
-                        child: Swiper(
-                          itemBuilder: (context, i) => Image.network(
-                              controller.searchProducts[index].images[i]),
-                          itemCount:
-                              controller.searchProducts[index].images.length,
-                          autoplay: true,
-                          autoplayDelay: 3000,
-                        ),
-                        borderRadius: BorderRadius.circular(4))
-                    : Container(
-                        height: 75,
-                        width: 75,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: Colors.indigo,
-                        ),
-                      ),
+                child: Container(
+                  height: 75,
+                  width: 75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Colors.transparent,
+                  ),
+                  child: Image.network(
+                    controller.searchProducts[index].images[0]["image"] ??
+                        "https://www.figma.com/file/WlmsKmghOWd5bPFZWaAADi/BLY?node-id=202%3A926",
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
               // 해당 상품 정보
               Flexible(
@@ -82,28 +72,52 @@ class SearchResult extends StatelessWidget {
                 child: Container(
                   width: 270,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // 상품 이름
-                      Text(
-                        controller.searchProducts[index].name,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: kTextColor),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              controller.searchProducts[index].name,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(color: kTextColor),
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Container(
+                            height: 18,
+                            width: 65,
+                            decoration: BoxDecoration(
+                                color: Colors.grey.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(6)),
+                            child: Text(
+                              controller.searchProducts[index].status == "sell"
+                                  ? "出售中"
+                                  : "出售完",
+                              textScaleFactor: 0.7,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: kTextColor,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )
+                        ],
                       ),
                       SizedBox(height: 5),
-                      // 판매 위치
+                      // 유저의 주소 | 게시 날짜
                       Text(
-                        noData, //"地址",
+                        "${controller.searchProducts[index].user.location} | ${controller.searchProducts[index].createdAt}",
                         textScaleFactor: 0.9,
                         style: TextStyle(color: kTextLightColor),
                       ),
                       SizedBox(height: 5),
                       // 상품 가격
                       Text(
-                        numFormatter
-                            .format(controller.searchProducts[index].price),
+                        "${numFormatter.format(controller.searchProducts[index].price)} 元 | ${controller.searchProducts[index].negotiable == false ? "不可协商" : "可协商"}",
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             color: kTextColor, fontWeight: FontWeight.bold),
@@ -115,8 +129,10 @@ class SearchResult extends StatelessWidget {
             ],
           ),
         ),
-        onTap: () {
-          Get.to(() => ProductDetailScreen());
+        onTap: () async {
+          final productData = await apiHelper.getProduct(
+              id: controller.searchProducts[index].id);
+          Get.to(() => ProductDetailScreen(), arguments: productData);
         },
       );
 }

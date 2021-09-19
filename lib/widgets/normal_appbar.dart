@@ -9,12 +9,16 @@ class NormalAppbar extends StatelessWidget implements PreferredSizeWidget {
   final title;
   final bool isTitleText;
   final List<Widget>? actions;
+  final Widget? leading;
+  final centerTitle;
   final height;
   NormalAppbar({
     Key? key,
     this.title = '',
     this.actions,
+    this.leading,
     this.isTitleText = true,
+    this.centerTitle = true,
     this.height = 60.0,
   }) : super(key: key);
   @override
@@ -26,6 +30,7 @@ class NormalAppbar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: IconThemeData(color: kIconColor),
       backgroundColor: kAppBarColor,
       elevation: 0,
+      leading: leading,
       title: isTitleText
           ? Text(
               title,

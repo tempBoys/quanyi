@@ -9,8 +9,6 @@ class SearchController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
-    // getHistory();
     super.onInit();
   }
 
@@ -20,7 +18,6 @@ class SearchController extends GetxController {
     if (searchProducts.isNotEmpty)
       lastID = searchProducts[searchProducts.length - 1].id;
     try {
-      print("Fetch");
       isLoading(true);
       var products =
           await SearchApi.fetchProducts(searchText: search, lastID: lastID);

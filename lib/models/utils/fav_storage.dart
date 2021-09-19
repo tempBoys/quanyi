@@ -9,7 +9,6 @@ class FavStorage extends GetxController {
     if (tempFav.contains("$id")) return;
     tempFav.add("$id");
     _prefs.setStringList('favorite', tempFav);
-    print(_prefs.getStringList("favorite"));
   }
 
   void delete({required id}) async {

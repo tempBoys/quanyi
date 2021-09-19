@@ -74,7 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(CupertinoIcons.search),
             onPressed: () => Get.to(() => SearchScreen()),
           ),
-          IconButton(icon: Icon(CupertinoIcons.bell), onPressed: () {})
+          IconButton(
+              icon: Icon(CupertinoIcons.bell),
+              onPressed: () {
+                favStroage.clear();
+              })
         ],
       ),
       body: SmartRefresher(

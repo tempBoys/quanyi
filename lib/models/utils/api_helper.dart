@@ -120,15 +120,21 @@ class ApiHelper {
   }
 
   // 본인의 id를 저장한다
-  // Future<void> getMyId() async {
-  //   var userId = await http.post(Uri.parse(serverUrl + "login/user/token"),
-  //       headers: {'Authorization': userToken});
-  //   myId = jsonDecode(userId.body)["id"];
-  // }
+  Future<Map> getMyId() async {
+    var userId = await http.post(Uri.parse(serverUrl + "login/user/token"),
+        headers: {'Authorization': userToken});
+    return jsonDecode(userId.body);
+  }
 
-  // ApiHelper() {
-  //   getMyId();
-  // }
+  Future<Map> getMyInfo({required id}) async {
+    http.Response response = await http.get(Uri.parse(serverUrl + "user/$id"));
+
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception("Error during getting my info!");
+    }
+  }
 
   // 로그인
   Future<void> login({required token}) async {

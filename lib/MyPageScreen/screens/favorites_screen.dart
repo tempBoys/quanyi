@@ -42,18 +42,16 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.data == null) {
           return Scaffold(
-            appBar: NormalAppbar(
-              title: "收藏",
-            ),
+            backgroundColor: kBackGroundColor,
+            appBar: NormalAppbar(title: "收藏"),
             body: Center(
               child: CircularProgressIndicator(),
             ),
           );
         }
         return Scaffold(
-          appBar: NormalAppbar(
-            title: "收藏",
-          ),
+          backgroundColor: kBackGroundColor,
+          appBar: NormalAppbar(title: "收藏"),
           body: GetBuilder<ProductBoxController>(
             builder: (controller) => controller.marketBoxes,
           ),

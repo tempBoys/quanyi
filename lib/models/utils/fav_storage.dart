@@ -6,6 +6,7 @@ class FavStorage extends GetxController {
 
   void add({required id}) async {
     List<String> tempFav = _prefs.getStringList("favorite") ?? [];
+    if (tempFav.contains("$id")) return;
     tempFav.add("$id");
     _prefs.setStringList('favorite', tempFav);
     print(_prefs.getStringList("favorite"));
@@ -16,7 +17,6 @@ class FavStorage extends GetxController {
     final idIndex = tempFav.indexOf("$id");
     tempFav.removeAt(idIndex);
     _prefs.setStringList('favorite', tempFav);
-    print(_prefs.getStringList("favorite"));
   }
 
   List<int> load() {
@@ -26,6 +26,15 @@ class FavStorage extends GetxController {
 
   void clear() async {
     _prefs.clear();
+  }
+
+  bool contain({required id}) {
+    List<String> tempFav = _prefs.getStringList("favorite") ?? [];
+    if (tempFav == []) {
+      return false;
+    } else {
+      return tempFav.contains("$id");
+    }
   }
 
   @override

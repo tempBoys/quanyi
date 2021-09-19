@@ -34,6 +34,8 @@ class ProductDetailScreenBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final nego = negotiable == true ? "可协商" : "不可协商";
+    productController.isFav.value = favStroage.contain(id: productId);
+    print(productController.isFav.value);
     return Obx(
       () => Container(
         height: 100.0 + bottombarController.scrollPosition.value / 8,

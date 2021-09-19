@@ -6,6 +6,7 @@ import 'package:quanyi/MyPageScreen/screens/purchase_history_screen.dart';
 import 'package:quanyi/MyPageScreen/screens/sale_history_screen.dart';
 import 'package:quanyi/models/size_config.dart';
 import 'package:quanyi/MyPageScreen/components/custom_bottom.dart';
+import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
 import 'package:quanyi/widgets/normal_button.dart';
 
@@ -19,11 +20,9 @@ class MyPageMainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NormalAppbar(
-        title: "我的信息",
-      ),
+      appBar: NormalAppbar(title: "我的信息"),
       body: Padding(
-        padding: EdgeInsets.all(13.w),
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         child: Column(
           children: [
             Row(
@@ -33,9 +32,7 @@ class MyPageMainScreen extends StatelessWidget {
                   backgroundImage: NetworkImage(
                       "http://cdn.cnn.com/cnnnext/dam/assets/191201230412-01-mohe-china-super-tease.jpg"),
                 ),
-                SizedBox(
-                  width: 20.0,
-                ),
+                SizedBox(width: 20.0),
                 Text(
                   userName,
                   style: TextStyle(

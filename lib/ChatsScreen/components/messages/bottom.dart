@@ -30,56 +30,66 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
         SizedBox(width: kDefaultPadding * 0.75),
         Expanded(
           child: Container(
-              height: 45,
-              width: 120,
-              child: TextFormField(
-                cursorColor: kTextColor,
-                maxLines: 1,
-                maxLength: 15,
-                controller: textController,
-                scrollPadding: EdgeInsets.zero,
-                decoration: InputDecoration(
-                    suffixIcon: textController.text.length != 0
-                        ? GestureDetector(
-                            child: Icon(
-                              Icons.close,
-                              size: 25,
-                              color: kIconColor,
-                            ),
-                            onTap: () {
-                              textController.clear();
-                            })
-                        : Container(),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(6)),
-                    counter: SizedBox(),
-                    contentPadding: EdgeInsets.symmetric(
-                        horizontal: kDefaultPadding, vertical: 5),
-                    hintText: "最多15个字",
-                    hintStyle: TextStyle(fontSize: 10)),
-              )),
-        ),
-        SizedBox(width: kDefaultPadding * 0.75),
-        GestureDetector(
-          child: Icon(
-            Icons.navigate_next_outlined,
-            size: 25,
-            color: kIconColor,
+            height: 40,
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: TextField(
+              maxLines: 1,
+              controller: textController,
+              onSubmitted: (value) async {
+                await messageController.sendMessage(
+                    sender: myId,
+                    receriver: chatController.user["id"],
+                    productId: chatController.product["id"],
+                    message: value);
+                chatController.storeChat(message: value);
+                textController.clear();
+              },
+              decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: kIconColor)),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color: kIconColor)),
+                contentPadding: EdgeInsets.symmetric(horizontal: 5),
+                suffixIcon: GestureDetector(
+                    child: Icon(
+                      Icons.close,
+                      size: 25,
+                      color: kIconColor,
+                    ),
+                    onTap: () {
+                      textController.clear();
+                    }),
+
+                // counter: Container(),
+                // contentPadding: EdgeInsets.symmetric(
+                //     horizontal: kDefaultPadding, vertical: 5),
+                // hintText: "最多15个字",
+                // hintStyle: TextStyle(fontSize: 10),
+              ),
+            ),
           ),
-          onTap: () {
-            try {
-              messageController.sendMessage(
-                  sender: myId,
-                  receriver: chatController.user["id"],
-                  productId: chatController.product["id"],
-                  message: textController.text);
-              chatController.storeChat(message: textController.text);
-              textController.clear();
-            } catch (e) {
-              Get.snackbar("传送失败", "请检查一下网络状态");
-            }
-          },
-        )
+        ),
+        // SizedBox(width: kDefaultPadding * 0.75),
+        // GestureDetector(
+        //   child: Icon(
+        //     Icons.navigate_next_outlined,
+        //     size: 25,
+        //     color: kIconColor,
+        //   ),
+        //   onTap: () {
+        //     try {
+        //       messageController.sendMessage(
+        //           sender: myId,
+        //           receriver: chatController.user["id"],
+        //           productId: chatController.product["id"],
+        //           message: textController.text);
+        //       chatController.storeChat(message: textController.text);
+        //       textController.clear();
+        //     } catch (e) {
+        //       Get.snackbar("传送失败", "请检查一下网络状态");
+        //     }
+        //   },
+        // )
       ],
     );
   }

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
+import 'package:quanyi/LoginScreen/screens/sign_in_loading_screen.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/router/app_page.dart';
 import 'package:quanyi/widgets/normal_appbar.dart';
@@ -12,7 +13,7 @@ import 'package:uri_to_file/uri_to_file.dart';
 class ApiHelper {
   final serverUrl = kServerAddress;
   final String userToken =
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxMjkwOTQxLCJleHAiOjE2NjI4MjY5NDF9.aFtlKbh43NaF41NzvOwQ_cY2Okzb3ZheeycE2QIDZ38";
+      "Bearer ${SignInLoadingScreen.storage.read(key: 'token')}";
 
   // 유저 정보를 불러온다
   Future<Map<String, dynamic>> getUser({required int id}) async {
@@ -69,13 +70,10 @@ class ApiHelper {
   }) async {
     print("object");
     var tempChatData = jsonEncode({
-      "type": "message",
-      "data": {
-        "message": message,
-        "sender": sender,
-        "receiver": receriver,
-        "product": productId,
-      }
+      "message": message,
+      "sender": sender,
+      "receiver": receriver,
+      "product": productId,
     });
     await http.post(Uri.parse(serverUrl + "chat"), body: tempChatData);
   }

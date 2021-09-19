@@ -15,16 +15,14 @@ class MessagesScreenBody extends StatelessWidget {
           ChatField(),
           // 채팅을 입력하는 곳
           Container(
-            height: 60,
+            height: 90,
             padding: EdgeInsets.symmetric(
                 horizontal: kDefaultPadding, vertical: kDefaultPadding / 1.5),
             decoration: BoxDecoration(
               border: Border(top: kBorderLine),
               color: kBackGroundColor,
             ),
-            child: SafeArea(
-              child: MessagesScreenBottom(),
-            ),
+            child: MessagesScreenBottom(),
           )
         ],
       ),

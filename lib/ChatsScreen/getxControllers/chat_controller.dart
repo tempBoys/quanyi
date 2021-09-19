@@ -16,7 +16,7 @@ class MessageController extends GetxController {
   // }
 
   // 메시지를 보낸다
-  void sendMessage({
+  Future<void> sendMessage({
     required int sender,
     required int receriver,
     required int productId,
@@ -59,7 +59,7 @@ class ChatController extends GetxController {
   // 채팅 내용을 저장하는 스토리지
   var chatStorage = null;
   // 채팅 내용
-  RxList<ChatMessage> storedChat = <ChatMessage>[].obs;
+  RxList<dynamic> storedChat = <ChatMessage>[].obs;
 
   Future<void> loadData({
     required int receiverId,
@@ -73,7 +73,8 @@ class ChatController extends GetxController {
   // 보낸 텍스트를 저장한다
   void storeChat({required message}) {
     storedChat =
-        chatStorage.getItem("user${user["id"]}product${product["id"]}") ?? [];
+        chatStorage.getItem("user${user["id"]}product${product["id"]}") ??
+            [].obs;
     storedChat.add(ChatMessage(
       text: message,
       messageType: ChatMessageType.text,

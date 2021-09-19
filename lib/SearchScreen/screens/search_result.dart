@@ -122,6 +122,17 @@ class SearchResult extends StatelessWidget {
                         style: TextStyle(
                             color: kTextColor, fontWeight: FontWeight.bold),
                       ),
+                      SizedBox(height: 2.5),
+                      // 상품을 구경한 횟수
+                      Container(
+                        width: double.infinity,
+                        child: Text(
+                          "已经有 ${controller.searchProducts[index].view} 个人看过",
+                          textScaleFactor: 0.9,
+                          textAlign: TextAlign.right,
+                          style: TextStyle(color: kTextLightColor),
+                        ),
+                      ),
                     ],
                   ),
                 ),

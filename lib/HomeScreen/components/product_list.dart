@@ -85,7 +85,7 @@ class ProductList extends StatelessWidget {
                     SizedBox(height: 5),
                     // 유저의 주소 | 게시 날짜
                     Text(
-                      "地址 | ${simpleData["created_at"]}",
+                      "주소 | ${simpleData["created_at"]}",
                       textScaleFactor: 0.9,
                       style: TextStyle(color: kTextLightColor),
                     ),

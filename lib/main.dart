@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:quanyi/LoginScreen/screens/sign_in_loading_screen.dart';
 import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/api_helper.dart';
 import 'package:quanyi/router/app_page.dart';
@@ -39,12 +40,15 @@ class _QuanYiState extends State<QuanYi> {
       // Register the user for push notifications
       deviceToken = await Pushy.register();
       print(deviceToken);
+      var temp = await apiHelper.getMyId();
+      myId = temp["id"];
     } on PlatformException {}
   }
 
   @override
   void initState() {
     super.initState();
+    print(SignInLoadingScreen.storage.read(key: 'token'));
     // Start the Pushy service
     Pushy.listen();
     pushyRegister();

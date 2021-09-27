@@ -50,6 +50,6 @@ final RegExp onlyDigits = RegExp("[0-9]+");
 final RegExp legalChinesePhoneNum = RegExp(
     '^((13[0-9])|(15[^4])|(166)|(17[0-8])|(18[0-9])|(19[8-9])|(147,145))\\d{8}\$');
 
-const String kServerAddress = "http://7534-124-14-224-4.ngrok.io/";
+const String kServerAddress = "http://1005-120-244-200-150.ngrok.io/";
 String deviceToken = "";
-int myId = 1;
+int myId = -1;

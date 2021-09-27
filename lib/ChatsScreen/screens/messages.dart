@@ -21,18 +21,6 @@ class MessagesScreen extends StatelessWidget {
     messageController.loadData(
         receiverId: Get.arguments["user"]["id"],
         productId: Get.arguments["productID"]);
-    final user = messageController.user;
-    final product = messageController.product;
-    // final LocalStorage chatStorage =
-    //     LocalStorage('${Get.arguments["user"]["id"] ?? userId}');
-    // final user = Get.arguments["user"] ?? apiHelper.getUser(id: userId);
-    // final product = productId != 0
-    //     ? {
-    //         "name": Get.arguments["productName"],
-    //         "price": Get.arguments["price"],
-    //       }
-    //     : apiHelper.getProduct(id: productId);
-
     return Scaffold(
       appBar: NormalAppbarWithBottom(
         isTitleText: false,
@@ -56,9 +44,11 @@ class MessagesScreen extends StatelessWidget {
                 width: 42,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
-                  color: kAccentColor,
                 ),
-                child: Image.network(Get.arguments["productImage"]),
+                child: Image.network(
+                  Get.arguments["productImage"],
+                  fit: BoxFit.fill,
+                ),
               ),
               SizedBox(width: 8),
               Column(
@@ -81,7 +71,12 @@ class MessagesScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: MessagesScreenBody(),
+      body: GestureDetector(
+        child: MessagesScreenBody(),
+        onTap: () {
+          FocusScope.of(context).requestFocus(FocusNode());
+        },
+      ),
     );
   }
 }

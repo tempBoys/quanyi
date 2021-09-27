@@ -1,7 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:localstorage/localstorage.dart';
 import 'package:multi_image_picker2/multi_image_picker2.dart';
+import 'package:quanyi/ChatsScreen/components/messages/message_ballon.dart';
 import 'package:quanyi/ChatsScreen/models/ChatMessage.dart';
+import 'package:quanyi/models/constants.dart';
 import 'package:quanyi/models/utils/api_helper.dart';
 
 class MessageController extends GetxController {
@@ -23,7 +26,6 @@ class MessageController extends GetxController {
     required String message,
   }) async {
     try {
-      print(message);
       await apiHelper.postChat(
           sender: sender,
           receriver: receriver,
@@ -57,9 +59,9 @@ class ChatController extends GetxController {
   // 사려고 하는 상품의 정보
   var product = null;
   // 채팅 내용을 저장하는 스토리지
-  var chatStorage = null;
+  final chatStorage = LocalStorage("chat_storage");
   // 채팅 내용
-  RxList<dynamic> storedChat = <ChatMessage>[].obs;
+  RxList<ChatMessage> storedChat = <ChatMessage>[].obs;
 
   Future<void> loadData({
     required int receiverId,
@@ -67,19 +69,39 @@ class ChatController extends GetxController {
   }) async {
     user = await apiHelper.getUser(id: receiverId);
     product = await apiHelper.getProduct(id: productId);
-    chatStorage = LocalStorage("user${receiverId}product$productId");
+
+    // 관련 채팅기록이 없을 경우
+    if (chatStorage.getItem("user${user["id"]}_product${product["id"]}") ==
+        null) {
+      storedChat = <ChatMessage>[].obs;
+      // 관련 채팅기록이 있을 경우
+    } else {
+      storedChat.value =
+          chatStorage.getItem("user${user["id"]}_product${product["id"]}");
+    }
+  }
+
+  Widget generateChats() {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: ListView.builder(
+          itemCount: storedChat.length,
+          itemBuilder: (ctx, index) =>
+              MessageBallon(message: storedChat[index]),
+        ),
+      ),
+    );
   }
 
   // 보낸 텍스트를 저장한다
   void storeChat({required message}) {
-    storedChat =
-        chatStorage.getItem("user${user["id"]}product${product["id"]}") ??
-            [].obs;
     storedChat.add(ChatMessage(
       text: message,
       messageType: ChatMessageType.text,
       isSender: true,
     ));
-    chatStorage.setItem("user${user["id"]}product${product["id"]}", storedChat);
+    chatStorage.setItem(
+        "user${user["id"]}_product${product["id"]}", storedChat);
   }
 }

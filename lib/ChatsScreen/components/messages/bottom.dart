@@ -35,13 +35,13 @@ class _MessagesScreenBottomState extends State<MessagesScreenBottom> {
             child: TextField(
               maxLines: 1,
               controller: textController,
-              onSubmitted: (value) async {
+              onSubmitted: (message) async {
                 await messageController.sendMessage(
                     sender: myId,
                     receriver: chatController.user["id"],
                     productId: chatController.product["id"],
-                    message: value);
-                chatController.storeChat(message: value);
+                    message: message);
+                chatController.storeChat(message: message);
                 textController.clear();
               },
               decoration: InputDecoration(
